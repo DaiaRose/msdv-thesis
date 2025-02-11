@@ -1,7 +1,8 @@
 # msdv-thesis
 Semester long project with Parsons Data Viz program.
 
-Intro
+Intro Draft
+
 American adults seek informal sex education through media resources to fill in knowledge gaps on key topics. These topics include body image, recognizing abuse, LGBTQ+ issues, consent, pleasure, and reproductive health. Often these same topics were inconsistently or inadequately addressed in K-12 education, where abstinence-only curricula remain common. This project explores how adults navigate these gaps through independent research, peer discussions, media consumption, and professional guidance, highlighting the broader implications of informal sex education.
 The inspiration for this project stems from the growing accessibility of digital information, which provides both opportunities and challenges in sexual health education. While the internet, social media, podcasts, and other digital resources have democratized access to information, they have also facilitated the spread of misinformation. This project examines how adults engage with these resources and supplement their learning through conversations with peers and professional guidance. In doing so, it aims to answer key questions: How do American adults compensate for the shortcomings of their formal sex education? What topics do they seek most? What role do different sources—digital, interpersonal, and professional—play in shaping sexual literacy?
 The U.S. has dynamic political and societal attitudes as reflected in state curricula including a history of debate around comprehensive approaches to sex education. It also has a history of non-governmental resources, significantly Planned Parenthood, providing education in tandem with and beyond the typical school setting. 
