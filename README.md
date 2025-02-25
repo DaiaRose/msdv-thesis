@@ -1,6 +1,21 @@
 # msdv-thesis
 Semester long project with Parsons Data Viz program.
 
+Intro Revision
+
+
+Sex education in secondary schools has long been a contentious topic in the United States, with debates centering on what content should be included and how it should be presented. One particularly significant area of discussion is the inclusion of LGBTQIA+ health and identities in sex education curricula. While some states have taken legislative steps to ensure LGBTQIA+ inclusivity, others have enacted policies that limit or outright ban discussions on sexual orientation and gender identity in the classroom. This project examines the current landscape of LGBTQIA+ inclusive sex education, the barriers to its implementation, and the broader implications for student well-being and public health.
+As of recent years, nine states and the District of Columbia have implemented policies requiring that sex education be inclusive of LGBTQIA+ individuals (Movement Advancement Project, 2024). Policies vary in scope, with some states mandating comprehensive, affirming instruction, while others only require LGBTQIA+ topics to be addressed if sex education is offered. Meanwhile, seven states have passed LGBTQIA+ inclusive curricular standards laws, ensuring that educational materials across subjects incorporate affirming representation (GLSEN, 2024). Often these advances have been met with resistance. Between 2021 and 2024, multiple states have passed legislation either requiring parental notification and opt-outs for LGBTQIA+ inclusive instruction, or censoring content related to LGBTQIA+ identities altogether. Eleven states currently have laws explicitly restricting or banning instruction on LGBTQIA+ topics in schools (GLSEN, 2024).
+There is increasing evidence that positive discussion of LGBTQIA+ people and issues helps build safer school environments, decreasing the educational, mental, and physical harms that LGBTQIA+ students experience as well as increasing intervention for all students when bullying is witnessed (APA, 2023). Research underscores that LGBTQIA+ inclusive sex education contributes to higher reports of safety at the individual and school levels (Snapp et al, 2015). Conversely, exclusionary curricula can reinforce stigma, misinformation, and health disparities.
+This evolving landscape highlights the dangers of misinformation, particularly as seen in recent federal developments. The CDC website was recently altered to include a disclaimer asserting that any information promoting "gender ideology" is inaccurate and disconnected from biological reality (CDC, 2025). This message, mandated by the Trump Administration as of February 14, 2025, undermines medically sound and evidence-based understandings of gender and sexual health. Such efforts to distort scientific consensus emphasize the urgency of ensuring that students receive accurate and inclusive sex education.
+As legal battles and policy shifts continue, this project highlights the importance of ensuring that all students receive comprehensive, affirming, and medically accurate sexual health education. By analyzing the state of LGBTQIA+ inclusion in sex education, this project aims to understand the shifts in education standards and their implications for student well-being. 
+
+
+
+
+
+
+
 Intro Draft
 
 American adults seek informal sex education through media resources to fill in knowledge gaps on key topics. These topics include body image, recognizing abuse, LGBTQ+ issues, consent, pleasure, and reproductive health. Often these same topics were inconsistently or inadequately addressed in K-12 education, where abstinence-only curricula remain common. This project explores how adults navigate these gaps through independent research, peer discussions, media consumption, and professional guidance, highlighting the broader implications of informal sex education.
