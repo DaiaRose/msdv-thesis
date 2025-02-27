@@ -6,7 +6,7 @@ https://siecus.org/wp-content/uploads/2023/12/2022-Sex-Ed-State-Law-and-Policy-C
 This chart provides an overview of sexual health topics covered by state in the US. The data is sourced from a 2022 report on sexual health education and contains a relatively small amount of high-quality categorical data. Each slice of the pie in the chart represents a state. Within each state, each color block represents the type of sexual health education the state offers. The categories for each state are the existence of sex education mandate, abstinence only, parents notified (opt in/out), and LGBTQ+ mention. 
 
 Sketch 2
-![IMG_4887 Medium](https://github.com/user-attachments/assets/4ace390c-dc0f-4175-bc1f-f63ff9fdd1ea)
+<img width="606" alt="Screenshot 2025-02-27 at 10 39 52 AM" src="https://github.com/user-attachments/assets/83c3f3a3-8a84-43a6-a1e5-e961fcb8c93f" />
 
 https://www.glsen.org/sites/default/files/2022-10/NSCS-2021-Full-Report.pdf 
 
@@ -15,7 +15,7 @@ and https://www.glsen.org/sites/default/files/2019-12/Full_NSCS_Report_English_2
 This chart displays student reports of positive LGBTQ inclusion in sex ed across school demographic categories. It offers a comparison between values for 2021 and 2017. It shows the low reports of positive LGBTQ inclusion in sex ed for all categories but with increase across the board over the 4 year span. The dataset is tables from a report on the National School Climate survey. As the aggregates are already represented as percentages and categories are consistent to compare between years I think a grouped bar chart works best to display insights.
 
 Sketch 3
-![IMG_4888 Medium](https://github.com/user-attachments/assets/481e1816-5214-4db4-864a-24a75cea1d3d)
+<img width="393" alt="Screenshot 2025-02-27 at 10 39 36 AM" src="https://github.com/user-attachments/assets/ef2347e2-ad5c-4325-b3b1-9deb78b2cc15" />
 
 https://www.lgbtmap.org/img/maps/citations-curricular-laws.pdf
 
