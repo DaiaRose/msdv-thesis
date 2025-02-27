@@ -1,6 +1,5 @@
 Sketch 1
-![IMG_4886 Medium](https://github.com/user-attachments/assets/f7a584d4-b9ab-4b32-895d-701492e0ffd2)
-
+<img width="512" alt="Screenshot 2025-02-27 at 10 38 30 AM" src="https://github.com/user-attachments/assets/29499dae-ab29-4963-9e45-3b1150c343b4" />
 
 https://siecus.org/wp-content/uploads/2023/12/2022-Sex-Ed-State-Law-and-Policy-Chart.pdf
 
