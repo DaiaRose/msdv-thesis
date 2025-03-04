@@ -1,8 +1,50 @@
 # msdv-thesis
 Semester long project with Parsons Data Viz program.
 
-Intro Revision
+MOCK
 
+
+Mock:
+[StateofSexEd.pdf](https://github.com/user-attachments/files/19074735/StateofSexEd.pdf)
+figma link:https://www.figma.com/design/VI7AQxYTH8fGol5yVlZyVF/Untitled?node-id=0-1&t=v2EGkfB4mTpH1ZkY-1
+
+
+Data:
+[POLICY BY STATE 2022 - Restored_Corrected_Sex_Education_State_Policy_Table.pdf](https://github.com/user-attachments/files/19074758/POLICY.BY.STATE.2022.-.Restored_Corrected_Sex_Education_State_Policy_Table.pdf)
+
+
+
+
+
+
+SKETCHES
+
+Sketch 1
+<img width="512" alt="Screenshot 2025-02-27 at 10 38 30 AM" src="https://github.com/user-attachments/assets/29499dae-ab29-4963-9e45-3b1150c343b4" />
+
+https://siecus.org/wp-content/uploads/2023/12/2022-Sex-Ed-State-Law-and-Policy-Chart.pdf
+
+This chart provides an overview of sexual health topics covered by state in the US. The data is sourced from a 2022 report on sexual health education and contains a relatively small amount of high-quality categorical data. Each slice of the pie in the chart represents a state. Within each state, each color block represents the type of sexual health education the state offers. The categories for each state are the existence of sex education mandate, abstinence only, parents notified (opt in/out), and LGBTQ+ mention. 
+
+Sketch 2
+<img width="606" alt="Screenshot 2025-02-27 at 10 39 52 AM" src="https://github.com/user-attachments/assets/83c3f3a3-8a84-43a6-a1e5-e961fcb8c93f" />
+
+https://www.glsen.org/sites/default/files/2022-10/NSCS-2021-Full-Report.pdf 
+
+and https://www.glsen.org/sites/default/files/2019-12/Full_NSCS_Report_English_2017.pdf 
+
+This chart displays student reports of positive LGBTQ inclusion in sex ed across school demographic categories. It offers a comparison between values for 2021 and 2017. It shows the low reports of positive LGBTQ inclusion in sex ed for all categories but with increase across the board over the 4 year span. The dataset is tables from a report on the National School Climate survey. As the aggregates are already represented as percentages and categories are consistent to compare between years I think a grouped bar chart works best to display insights.
+
+Sketch 3
+<img width="393" alt="Screenshot 2025-02-27 at 10 39 36 AM" src="https://github.com/user-attachments/assets/ef2347e2-ad5c-4325-b3b1-9deb78b2cc15" />
+
+https://www.lgbtmap.org/img/maps/citations-curricular-laws.pdf
+
+and https://airtable.com/appg59iDuPhlLPPFp/shrtwubfBUo2tuHyO/tblZ40w5HLBuTK9vs/viw5lFPxKHGkamF0k?blocks=hide
+
+Timeline of laws censoring mention of and circumstances around homosexuality and later gender ideology in united states. Using text quoted from the law to represent length of its enactment. This explores the languages shifts and lifespans of such laws. The data is from movement advancement projects LGBTQ Youth: LGBTQ Curricular Laws report. A timeline is used to show larger scale shifts and history in a macro view of the nation.
+
+INTRO REVISION
 
 Sex education in secondary schools has long been a contentious topic in the United States, with debates centering on what content should be included and how it should be presented. One particularly significant area of discussion is the inclusion of LGBTQIA+ health and identities in sex education curricula. While some states have taken legislative steps to ensure LGBTQIA+ inclusivity, others have enacted policies that limit or outright ban discussions on sexual orientation and gender identity in the classroom. This project examines the current landscape of LGBTQIA+ inclusive sex education, the barriers to its implementation, and the broader implications for student well-being and public health.
 As of recent years, nine states and the District of Columbia have implemented policies requiring that sex education be inclusive of LGBTQIA+ individuals (Movement Advancement Project, 2024). Policies vary in scope, with some states mandating comprehensive, affirming instruction, while others only require LGBTQIA+ topics to be addressed if sex education is offered. Meanwhile, seven states have passed LGBTQIA+ inclusive curricular standards laws, ensuring that educational materials across subjects incorporate affirming representation (GLSEN, 2024). Often these advances have been met with resistance. Between 2021 and 2024, multiple states have passed legislation either requiring parental notification and opt-outs for LGBTQIA+ inclusive instruction, or censoring content related to LGBTQIA+ identities altogether. Eleven states currently have laws explicitly restricting or banning instruction on LGBTQIA+ topics in schools (GLSEN, 2024).
@@ -16,7 +58,7 @@ As legal battles and policy shifts continue, this project highlights the importa
 
 
 
-Intro Draft
+INTRO DRAFT
 
 American adults seek informal sex education through media resources to fill in knowledge gaps on key topics. These topics include body image, recognizing abuse, LGBTQ+ issues, consent, pleasure, and reproductive health. Often these same topics were inconsistently or inadequately addressed in K-12 education, where abstinence-only curricula remain common. This project explores how adults navigate these gaps through independent research, peer discussions, media consumption, and professional guidance, highlighting the broader implications of informal sex education.
 The inspiration for this project stems from the growing accessibility of digital information, which provides both opportunities and challenges in sexual health education. While the internet, social media, podcasts, and other digital resources have democratized access to information, they have also facilitated the spread of misinformation. This project examines how adults engage with these resources and supplement their learning through conversations with peers and professional guidance. In doing so, it aims to answer key questions: How do American adults compensate for the shortcomings of their formal sex education? What topics do they seek most? What role do different sources—digital, interpersonal, and professional—play in shaping sexual literacy?
@@ -28,7 +70,7 @@ By understanding these dynamics, this project underscores the need for lifelong,
 
 
 
-Abstract draft
+ABSTRACT DRAFT
 
 Many American adults enter adulthood with knowledge gaps that impact their sexual health, relationships, and overall well-being. Topics they most wish to learn coincide with content inconsistently addressed in American K-12 schools, many of which emphasize abstinence-only approaches. These topics include body image, recognizing abuse, LGBTQ+ issues, consent, pleasure, and reproductive health. 
 In an age of information overload, answers and wrong answers to people's most curious questions are readily available; which presents many avenues for continuing education, as well as risk for the spread of misinformation. American adults bridge sex education gaps through independent research, peer discussions, media consumption, and access to professionals; each method influenced by social, cultural, and technological factors. 
