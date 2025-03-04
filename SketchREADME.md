@@ -1,3 +1,20 @@
+Mock 
+
+
+Mock:
+[StateofSexEd.pdf](https://github.com/user-attachments/files/19074735/StateofSexEd.pdf)
+figma link:https://www.figma.com/design/VI7AQxYTH8fGol5yVlZyVF/Untitled?node-id=0-1&t=v2EGkfB4mTpH1ZkY-1
+
+
+Data:
+[POLICY BY STATE 2022 - Restored_Corrected_Sex_Education_State_Policy_Table.pdf](https://github.com/user-attachments/files/19074758/POLICY.BY.STATE.2022.-.Restored_Corrected_Sex_Education_State_Policy_Table.pdf)
+
+
+
+
+
+
+
 Sketch 1
 <img width="512" alt="Screenshot 2025-02-27 at 10 38 30 AM" src="https://github.com/user-attachments/assets/29499dae-ab29-4963-9e45-3b1150c343b4" />
 
