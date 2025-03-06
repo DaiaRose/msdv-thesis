@@ -13,6 +13,12 @@ Data:
 [POLICY BY STATE 2022 - Restored_Corrected_Sex_Education_State_Policy_Table.pdf](https://github.com/user-attachments/files/19074758/POLICY.BY.STATE.2022.-.Restored_Corrected_Sex_Education_State_Policy_Table.pdf)
 
 
+![Frame 1](https://github.com/user-attachments/assets/737f7561-8034-40f3-afe6-e7ff37512469)
+![Frame 2](https://github.com/user-attachments/assets/c489ebdc-b753-4c7b-aba1-d9dc8c8f5840)
+![Frame 4](https://github.com/user-attachments/assets/ba140264-bedc-467a-b7e6-d0726354d446)
+
+
+
 
 
 
