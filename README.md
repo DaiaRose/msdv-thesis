@@ -1,6 +1,18 @@
 # msdv-thesis
 Semester long project with Parsons Data Viz program.
 
+
+Design in Figma
+
+https://www.figma.com/proto/c0JFsweAcF2epCfjR8FJxN/Thesis?node-id=0-1&t=8yoQ2hZ26Zj6cMh3-1
+
+
+
+
+
+
+
+
 MOCK
 
 
