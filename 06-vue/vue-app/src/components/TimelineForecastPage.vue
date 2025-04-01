@@ -1,5 +1,5 @@
-<!-- src/components/TimelineForecast.vue -->
 <!-- src/components/TimelineForecastPage.vue -->
+ 
 <template>
     <div class="horizontal-timeline">
       <!-- Horizontal scroll container for forecast steps -->
@@ -60,8 +60,10 @@
         this.width = Math.min(MAX_SVG_WIDTH, window.innerWidth);
       },
       goToNextPage() {
-        this.$router.push({ name: "NextPage" });
-      },
+    // Navigate to the CurrentlyStatement page using its route name.
+    this.$router.push({ name: 'CurrentlyStatement' });
+    },
+
     },
     mounted() {
       fetch(API_URL)
