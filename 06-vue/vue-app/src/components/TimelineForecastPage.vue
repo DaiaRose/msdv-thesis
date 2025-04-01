@@ -79,7 +79,7 @@
   
   <style scoped>
   .horizontal-timeline {
-    padding: 10px;
+    margin-top: 80px;
   }
   .scroll-container {
     display: flex;
