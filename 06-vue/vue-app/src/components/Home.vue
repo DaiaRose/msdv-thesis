@@ -2,7 +2,7 @@
 <template>
   <div class="home">
     <h1>Welcome to the Homepage!</h1>
-    <p>This is your landing page.</p>
+    <p>Hero image will go here</p>
     <!-- Button to navigate to the timeline page -->
     <router-link to="/timeline">
       <button>Go to Timeline</button>
