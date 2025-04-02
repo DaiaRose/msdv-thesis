@@ -4,6 +4,7 @@ import Home from '../components/Home.vue'
 import TimelineForecastPage from '../components/TimelineForecastPage.vue'
 import CurrentlyStatement from '../components/currentlyStatement.vue'  // New page
 import CensorLaws from '../components/CensorLaws.vue'  // New page
+import FaceGrid from '../components/FaceGrid.vue'  // New page
 
 const routes = [
   {
@@ -26,6 +27,12 @@ const routes = [
     path: '/CensorLaws',
     name: 'CensorLaws',
     component: CensorLaws,
+  },
+
+  {
+    path: '/FaceGrid',
+    name: 'FaceGrid',
+    component: FaceGrid,
   },
 
 ]

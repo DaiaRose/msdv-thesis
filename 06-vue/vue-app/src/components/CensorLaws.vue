@@ -33,9 +33,6 @@
             :close-on-click-modal="true"
             >
         <p>{{ dialogContent }}</p>
-        <template #footer>
-            <el-button @click="dialogVisible = false">Close</el-button>
-        </template>
         </el-dialog>
 
       </div>
