@@ -8,7 +8,7 @@
     >
       <img
         v-if="index < filledCount"
-        :src="imageSrc"
+        :src="getImageSrc(randomImages[index])"
         alt="icon"
         class="icon"
       />
@@ -23,15 +23,37 @@ export default {
       type: Number,
       default: 20
     },
-    imageNumber: {
+    minImage: {
+      type: Number,
+      default: 1
+    },
+    maxImage: {
       type: Number,
       default: 1
     }
   },
-  computed: {
-    // This computed property builds the image source based on the passed-in imageNumber prop.
-    imageSrc() {
-      return require(`@/images/face${this.imageNumber}.png`);
+  data() {
+    return {
+      // Array to hold a random image number for each "on" square
+      randomImages: []
+    };
+  },
+  created() {
+    this.generateRandomImages();
+  },
+  methods: {
+    generateRandomImages() {
+      this.randomImages = [];
+      for (let i = 0; i < this.filledCount; i++) {
+        this.randomImages.push(this.getRandomImageNumber(this.minImage, this.maxImage));
+      }
+    },
+    getRandomImageNumber(min, max) {
+      // Returns a random integer between min and max (inclusive)
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+    getImageSrc(imageNumber) {
+      return require(`@/images/face${imageNumber}.png`);
     }
   }
 };
@@ -69,6 +91,7 @@ export default {
   object-fit: contain;
 }
 </style>
+
 
 
 
