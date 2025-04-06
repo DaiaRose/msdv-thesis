@@ -5,6 +5,10 @@
       <div class="content">
         <h1>Censorship Laws Page</h1>
       </div>
+       <!-- Navigation button timeline item -->
+       <div class="nextbutton-item">
+          <button @click="goToNextPage">Go to Next Page</button>
+        </div>
     
       <!-- Timeline Section -->
       <div class="timeline">
@@ -80,7 +84,7 @@
           { year: 2007, showLabel: false },
           { year: 2008, showLabel: false },
           { year: 2009, showLabel: false },
-          { year: 2010, showLabel: false },
+          { year: 2010, showLabel: true },
           { year: 2011, showLabel: false },
           { year: 2012, showLabel: false },
           { year: 2013, showLabel: false },
@@ -122,7 +126,11 @@
       this.dialogContent = state.tooltip;
       this.dialogTitle = state.title;
       this.dialogVisible = true;
-      }
+      },
+
+      goToNextPage() {
+      this.$router.push({ name: 'FaceGridPage' });
+      },
     }
   };
 

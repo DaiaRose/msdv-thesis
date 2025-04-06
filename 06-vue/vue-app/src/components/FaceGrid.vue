@@ -1,9 +1,17 @@
 <template>
   <div class="grid-container">
-    <div v-for="(row, rowIndex) in 6" :key="rowIndex" class="grid-row">
-      <div v-for="(col, colIndex) in 4" :key="colIndex" class="square">
-        <span v-if="getIcon(rowIndex, colIndex)">★</span>
-      </div>
+    <div
+      v-for="(square, index) in 24"
+      :key="index"
+      class="square"
+      :class="{ on: index < filledCount, off: index >= filledCount }"
+    >
+      <img
+        v-if="index < filledCount"
+        :src="imageSrc"
+        alt="icon"
+        class="icon"
+      />
     </div>
   </div>
 </template>
@@ -11,17 +19,19 @@
 <script>
 export default {
   props: {
-    filledCount: Number // Number of squares to be filled out of 24
-  },
-  computed: {
-    filledPositions() {
-      return Array.from({ length: this.filledCount }, (_, i) => i);
+    filledCount: {
+      type: Number,
+      default: 20
+    },
+    imageNumber: {
+      type: Number,
+      default: 1
     }
   },
-  methods: {
-    getIcon(row, col) {
-      const index = row * 4 + col;
-      return this.filledPositions.includes(index);
+  computed: {
+    // This computed property builds the image source based on the passed-in imageNumber prop.
+    imageSrc() {
+      return require(`@/images/face${this.imageNumber}.png`);
     }
   }
 };
@@ -31,8 +41,11 @@ export default {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  grid-template-rows: repeat(6, 1fr);
+  grid-auto-flow: row;
+  gap: 7px;
   width: fit-content;
+  margin-top: 60px;
 }
 
 .square {
@@ -41,6 +54,23 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #000;
+}
+
+.square.on {
+  background-color: #D1B3E2;
+}
+
+.square.off {
+  background-color: grey;
+}
+
+.icon {
+  width: 110%;
+  object-fit: contain;
 }
 </style>
+
+
+
+
+
