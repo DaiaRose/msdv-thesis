@@ -1,0 +1,38 @@
+{
+    "group_1": {
+      "head": ["pathToHead1.png", "pathToHead2.png"],
+      "face": ["face1.png", "face2.png"],
+      "accessory": ["accessory1.png", "accessory2.png"]
+    },
+    "group_2": {
+      "head": ["pathToHead3.png", "pathToHead4.png"],
+      "face": ["face3.png", "face4.png"],
+      "accessory": ["accessory3.png", "accessory4.png"]
+    },
+    "group_3": {
+      "head": ["pathToHead5.png", "pathToHead6.png"],
+      "face": ["face5.png", "face6.png"],
+      "accessory": ["accessory5.png", "accessory6.png"]
+    },
+    "group_4": {
+      "head": ["pathToHead7.png", "pathToHead8.png"],
+      "face": ["face7.png", "face8.png"],
+      "accessory": ["accessory7.png", "accessory8.png"]
+    },
+    "group_5": {
+      "head": ["pathToHead9.png", "pathToHead10.png"],
+      "face": ["face9.png", "face10.png"],
+      "accessory": ["accessory9.png", "accessory10.png"]
+    },
+    "group_6": {
+      "head": ["pathToHead11.png", "pathToHead12.png"],
+      "face": ["face11.png", "face12.png"],
+      "accessory": ["accessory11.png", "accessory12.png"]
+    },
+    "group_7": {
+      "head": ["pathToHead13.png", "pathToHead14.png"],
+      "face": ["face13.png", "face14.png"],
+      "accessory": ["accessory13.png", "accessory14.png"]
+    }
+  }
+  

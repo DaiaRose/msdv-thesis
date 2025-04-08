@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Event 1",
+    "timestamp": "a day 1919",
+    "longDescription": "The U.S. Department of Labor’s Children’s Bureau releases a report suggesting sex education during school could have better protected soldiers from STIs.",
+    "iconUrl": "https://yourdomain.com/assets/kickoff.png"
+  },
+  {
+    "id": 2,
+    "title": "Event 2",
+    "timestamp": "May 14, 1913",
+    "longDescription": "Ella Flagg Young, the superintendent of Chicago Public Schools was the first to attempt implementing a city-wide sex-hygiene program in secondary schools",
+    "iconUrl": "https://yourdomain.com/assets/design.png"
+  },
+  {
+    "id": 3,
+    "title": "Event 3",
+    "timestamp": "1981",
+    "longDescription": "The global pandemic of HIV/AIDS begins, it is an ongoing worldwide public health issue.",
+    "iconUrl": "https://yourdomain.com/assets/development.png"
+  }
+]

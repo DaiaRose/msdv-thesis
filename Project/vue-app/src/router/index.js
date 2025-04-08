@@ -1,7 +1,7 @@
 //src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
-import TimelineForecastPage from '../components/TimelineForecastPage.vue'
+import HistoryPage from '../components/HistoryPage.vue'
 import CurrentlyStatement from '../components/currentlyStatement.vue'  // New page
 import CensorLaws from '../components/CensorLaws.vue'  // New page
 import FaceGridPage from '../components/FaceGridPage.vue'  // New page
@@ -13,9 +13,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/timeline',
-    name: 'TimelineForecast',
-    component: TimelineForecastPage,
+    path: '/historyPage',
+    name: 'HistoryPage',
+    component: HistoryPage,
   },
   {
     path: '/currently-statement',

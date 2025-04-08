@@ -4,7 +4,7 @@
     <h1>Welcome to the Homepage!</h1>
     <p>Hero image will go here</p>
     <!-- Button to navigate to the timeline page -->
-    <router-link to="/timeline">
+    <router-link to="/HistoryPage">
       <button>Go to Timeline</button>
     </router-link>
   </div>
