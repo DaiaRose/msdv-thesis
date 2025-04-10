@@ -37,8 +37,12 @@ const routes = [
 
 ]
 
+// Set the base path based on the environment
+const base =
+  process.env.NODE_ENV === 'production' ? '/msdv-thesis/' : '/'
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(base),
   routes,
 })
 
