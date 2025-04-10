@@ -52,9 +52,9 @@ export default {
       // Returns a random integer between min and max (inclusive)
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
-    getImageSrc(imageNumber) {
-      return require(`@/images/face${imageNumber}.png`);
-    }
+    // getImageSrc(imageNumber) {
+    //   return require(`@/images/face${imageNumber}.png`);
+    // }
   }
 };
 </script>

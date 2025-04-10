@@ -1,0 +1,39 @@
+// <template>
+//   <div class="face-cell">
+//     <!-- Note: src is now bound to the URL string passed in via props -->
+//     <img class="head" :src="head" @load="onHeadLoad" :title="headName">
+//     <img class="face" :src="face" @load="onFaceLoad">
+//     <img class="accessory" :src="accessory" @load="onAccLoad">
+//   </div>
+// </template>
+
+// <script>
+// export default {
+//   name: "Face",
+//   props: {
+//     head: String,
+//     face: String,
+//     accessory: String
+//   },
+//   computed: {
+//     headName() {
+//       // Extract just the filename from the URL if needed
+//       return this.head.split('/').pop();
+//     }
+//   },
+//   methods: {
+//     onHeadLoad(e) {
+//       // Compute centering based on e.target.naturalWidth/Height, etc.
+//       // Use Vue’s data to update reactive style or use inline style bindings
+//       // Example: this.$refs.head.style.left = ...
+//     },
+//     onFaceLoad(e) {
+//       // Similar logic for face layer…
+//     },
+//     onAccLoad(e) {
+//       // Similar logic for accessory layer…
+//     }
+//   }
+// };
+// </script>
+
