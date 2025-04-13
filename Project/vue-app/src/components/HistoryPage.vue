@@ -55,7 +55,7 @@ export default {
       this.$router.push({ name: 'CurrentlyStatement' });
     },
     fetchTimelineData() {
-      fetch('/data/historyData.json')
+      fetch('data/historyData.json')
         .then((response) => response.json())
         .then((data) => {
           this.timelineCards = data;

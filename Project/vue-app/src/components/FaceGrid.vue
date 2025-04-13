@@ -14,11 +14,12 @@
           class="icon head"
           @error="onImageError($event, randomHeadImages[index])"
         />
-        <!-- Face Layer -->
+        <!-- Face Layer with mouseover effect -->
         <img
           :src="randomFaceImages[index]"
           alt="face"
           class="icon face"
+          @mouseenter="changeFace(index)"
           @error="onImageError($event, randomFaceImages[index])"
         />
       </div>
@@ -45,7 +46,6 @@ export default {
   },
   data() {
     return {
-      // Shuffled image arrays for each layer
       randomHeadImages: [],
       randomFaceImages: []
     };
@@ -67,16 +67,14 @@ export default {
   },
   methods: {
     generateUniqueImages() {
-      // Generate shuffled arrays for both head and face layers.
-      this.randomHeadImages = this.generateLayerImages(this.headImagePaths, '/images/peeps/');
-      this.randomFaceImages = this.generateLayerImages(this.faceImagePaths, '/images/face/');
+      if (!this.headImagePaths.length || !this.faceImagePaths.length) return;
+      this.randomHeadImages = this.generateLayerImages(this.headImagePaths, 'images/peeps/');
+      this.randomFaceImages = this.generateLayerImages(this.faceImagePaths, 'images/face/');
     },
     generateLayerImages(pathsArray, folderPath) {
-      // Map filenames to full paths (prepend folderPath)
-      const fullPaths = pathsArray.map(filename => `${folderPath}${filename}`);
-      // Shuffle them using Fisher–Yates
+      // Prepend the base URL and the folder path to each filename.
+      const fullPaths = pathsArray.map(filename => `${process.env.BASE_URL}${folderPath}${filename}`);
       this.shuffleArray(fullPaths);
-      // Pick filledCount items, wrapping around if necessary.
       const selected = [];
       for (let i = 0; i < this.filledCount; i++) {
         selected.push(fullPaths[i % fullPaths.length]);
@@ -91,6 +89,11 @@ export default {
     },
     onImageError(event, src) {
       console.error('Image failed to load:', src);
+    },
+    changeFace(index) {
+      const availableFaces = this.faceImagePaths.map(filename => `${process.env.BASE_URL}images/face/${filename}`);
+      const newFace = availableFaces[Math.floor(Math.random() * availableFaces.length)];
+      this.randomFaceImages[index] = newFace;
     }
   }
 };
@@ -112,39 +115,37 @@ export default {
   position: relative;
 }
 
-/* The wrapper holds both layers */
+/* The layer-wrapper positions the two layers together. */
 .layer-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* Base rule for images can be removed or minimized since we override per layer.
-   If you want to remove the .icon base rules altogether, you can do so.
-   For this example, we'll leave .icon, but override for .head and .face. */
+/* Base styling for images */
 .icon {
-  /* Remove the default absolute positioning,
-     we'll set specific values on the layers */
   width: 120%;
   height: 120%;
+  object-fit: contain;
+  display: block;
 }
 
-/* HEAD LAYER: Rendered normally so it scales to fill the square as it did before */
+/* HEAD LAYER: Rendered normally */
 .head {
   margin-left: -5px;
   margin-top: -5px;
-  position: static; /* not absolutely positioned */
+  position: static; 
   display: block;
   max-width: 120%;
   max-height: 120%;
   z-index: 1;
 }
 
-/* FACE LAYER: Overlaid as a smaller, centered image */
+/* FACE LAYER: Overlaid and smaller */
 .face {
   position: absolute;
-  width: 70%;    /* Adjust this percentage to get your desired face size */
-  height: auto;  /* Preserves aspect ratio */
+  width: 70%;
+  height: auto;
   top: 60%;
   left: 55%;
   transform: translate(-50%, -50%);
@@ -160,6 +161,7 @@ export default {
   background-color: grey;
 }
 </style>
+
 
 
 

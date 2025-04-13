@@ -100,7 +100,7 @@ export default {
       this.currentSceneIndex = Math.min(Math.max(index, 0), this.scenes.length - 1);
     },
     fetchManifest() {
-      fetch('/data/manifestPeeps.json')
+      fetch('data/manifestPeeps.json')
         .then(response => response.json())
         .then(data => {
           this.manifest = data;
