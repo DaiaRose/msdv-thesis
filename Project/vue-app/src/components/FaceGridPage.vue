@@ -5,19 +5,18 @@
       <h1>My Face Grids</h1>
     </header>
     
-    <!-- Fixed grid container -->
+    <!-- Fixed grid container (dynamic) -->
     <div class="fixed-grid-container">
       <div class="face-grids-container">
         <FaceGrid
-        v-for="(grid, index) in faceGrids"
-        :key="index"
-        :filledCount="grid.filledCount"
-        :minImage="grid.minImage"
-        :maxImage="grid.maxImage"
-      />
+          v-for="(grid, index) in processedFaceGrids"
+          :key="index"
+          :filledCount="grid.filledCount"
+          :imagePaths="grid.imagePaths"
+        />
       </div>
     </div>
-    
+
     <!-- Fixed text container that updates in place -->
     <div class="fixed-text-container">
       <h2>{{ currentScene.title }}</h2>
@@ -38,38 +37,39 @@ export default {
   data() {
     return {
       currentSceneIndex: 0,
+      manifest: null, // Will hold the data loaded from manifestPeeps.json
       scenes: [
         {
           title: 'Scene 1: Six Grids',
-          description: 'This scene displays 6 grids across the page.',
+          description: 'This scene displays 6 grids, each pulling images from the manifest.',
           faceGrids: [
-          { filledCount: 10, minImage: 1, maxImage: 12 },
-          { filledCount: 15, minImage: 13, maxImage: 23 },
-          { filledCount: 20, minImage: 24, maxImage: 33 },
-          { filledCount: 12, minImage: 34, maxImage: 42 },
-          { filledCount: 18, minImage: 43, maxImage: 51 },
-          { filledCount: 24, minImage: 52, maxImage: 56 }
+            { filledCount: 12, manifestKey: 'nativePeeps' },
+            { filledCount: 11, manifestKey: 'multiracePeeps' },
+            { filledCount: 9,  manifestKey: 'latinxPeeps' },
+            { filledCount: 9,  manifestKey: 'mideastPeeps' },
+            { filledCount: 8,  manifestKey: 'blackPeeps' },
+            { filledCount: 5,  manifestKey: 'whitePeeps' }
           ]
         },
         {
           title: 'Scene 2: Two Grids',
           description: 'This scene displays 2 grids.',
           faceGrids: [
-            { filledCount: 8, imageNumber: 1 },
-            { filledCount: 16, imageNumber: 2 }
+            { filledCount: 13, manifestKey: 'nativePeeps' },
+            { filledCount: 9,  manifestKey: 'multiracePeeps' }
           ]
         },
         {
           title: 'Scene 3: Seven Grids',
           description: 'This scene displays 7 grids.',
           faceGrids: [
-            { filledCount: 5, imageNumber: 1 },
-            { filledCount: 10, imageNumber: 2 },
-            { filledCount: 15, imageNumber: 2 },
-            { filledCount: 20, imageNumber: 1 },
-            { filledCount: 10, imageNumber: 2 },
-            { filledCount: 12, imageNumber: 2 },
-            { filledCount: 18, imageNumber: 1 }
+            { filledCount: 14, manifestKey: 'nativePeeps' },
+            { filledCount: 10, manifestKey: 'latinxPeeps' },
+            { filledCount: 9,  manifestKey: 'multiracePeeps' },
+            { filledCount: 9,  manifestKey: 'mideastPeeps' },
+            { filledCount: 9,  manifestKey: 'blackPeeps' },
+            { filledCount: 9,  manifestKey: 'whitePeeps' },
+            { filledCount: 6,  manifestKey: 'aapiPeeps' }
           ]
         }
       ]
@@ -78,26 +78,38 @@ export default {
   computed: {
     currentScene() {
       return this.scenes[this.currentSceneIndex];
+    },
+    processedFaceGrids() {
+      // For each grid in the current scene, attach the corresponding imagePaths array (if the manifest is loaded)
+      if (this.manifest && this.currentScene && this.currentScene.faceGrids) {
+        return this.currentScene.faceGrids.map(grid => ({
+          ...grid,
+          imagePaths: this.manifest[grid.manifestKey] || []
+        }));
+      }
+      return [];
     }
   },
   methods: {
-    // Updates the currentSceneIndex based on scroll position.
     handleScroll() {
       const scrollPos = window.scrollY;
       const viewportHeight = window.innerHeight;
       const index = Math.floor(scrollPos / viewportHeight);
-      // Clamp the scene index to available scenes.
-      if (index < 0) {
-        this.currentSceneIndex = 0;
-      } else if (index >= this.scenes.length) {
-        this.currentSceneIndex = this.scenes.length - 1;
-      } else {
-        this.currentSceneIndex = index;
-      }
+      this.currentSceneIndex = Math.min(Math.max(index, 0), this.scenes.length - 1);
+    },
+    fetchManifest() {
+      fetch('/data/manifestPeeps.json')
+        .then(response => response.json())
+        .then(data => {
+          this.manifest = data;
+          console.log(this.manifest);
+        })
+        .catch(error => console.error("Error fetching manifest:", error));
     }
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
+    this.fetchManifest();
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -113,7 +125,7 @@ export default {
 /* Fixed header */
 .fixed-header {
   position: fixed;
-  top: 20;
+  top: 20px;
   left: 0;
   right: 0;
   z-index: 100;
@@ -153,9 +165,11 @@ export default {
 /* Invisible scroll container to provide scroll height */
 .scroll-container {
   height: 300vh; /* Adjust height as needed to control scroll length */
-  pointer-events: none; /* Ensures it doesn't block mouse events */
+  pointer-events: none;
 }
 </style>
+
+
 
 
 

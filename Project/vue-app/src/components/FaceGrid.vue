@@ -8,7 +8,7 @@
     >
       <img
         v-if="index < filledCount"
-        :src="getImageSrc(randomImages[index])"
+        :src="randomImages[index]"
         alt="icon"
         class="icon"
       />
@@ -23,38 +23,46 @@ export default {
       type: Number,
       default: 20
     },
-    minImage: {
-      type: Number,
-      default: 1
-    },
-    maxImage: {
-      type: Number,
-      default: 1
+    // Now the component expects an array of image paths from the manifest.
+    imagePaths: {
+      type: Array,
+      required: true
     }
   },
   data() {
     return {
-      // Array to hold a random image number for each "on" square
+      // Array that will store the shuffled image paths for use by the grid.
       randomImages: []
     };
   },
   created() {
-    this.generateRandomImages();
+    this.generateUniqueImages();
+  },
+  watch: {
+    imagePaths(newVal) {
+      if (newVal && newVal.length) {
+        this.generateUniqueImages();
+      }
+    }
   },
   methods: {
-    generateRandomImages() {
-      this.randomImages = [];
+    generateUniqueImages() {
+      const paths = this.imagePaths.map(filename => `/images/peeps/${filename}`);
+      this.shuffleArray(paths);
+      const selected = [];
       for (let i = 0; i < this.filledCount; i++) {
-        this.randomImages.push(this.getRandomImageNumber(this.minImage, this.maxImage));
+        selected.push(paths[i % paths.length]);
       }
+      this.randomImages = selected;
+      console.log("Received imagePaths:", this.imagePaths);
     },
-    getRandomImageNumber(min, max) {
-      // Returns a random integer between min and max (inclusive)
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    },
-    // getImageSrc(imageNumber) {
-    //   return require(`@/images/face${imageNumber}.png`);
-    // }
+    shuffleArray(arr) {
+      // Implements Fisher–Yates shuffle.
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
   }
 };
 </script>
@@ -91,6 +99,9 @@ export default {
   object-fit: contain;
 }
 </style>
+
+
+
 
 
 
