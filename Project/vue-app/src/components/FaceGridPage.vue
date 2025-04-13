@@ -12,15 +12,16 @@
           v-for="(grid, index) in processedFaceGrids"
           :key="index"
           :filledCount="grid.filledCount"
-          :imagePaths="grid.imagePaths"
+          :headImagePaths="grid.headImagePaths"
+          :faceImagePaths="grid.faceImagePaths"
         />
       </div>
     </div>
-
+    
     <!-- Fixed text container that updates in place -->
     <div class="fixed-text-container">
-      <h2>{{ currentScene.title }}</h2>
-      <p>{{ currentScene.description }}</p>
+      <h2>{{ currentScene.title || 'Loading...' }}</h2>
+      <p>{{ currentScene.description || '' }}</p>
     </div>
     
     <!-- Invisible scroll container to drive scene changes -->
@@ -43,48 +44,49 @@ export default {
           title: 'Scene 1: Six Grids',
           description: 'This scene displays 6 grids, each pulling images from the manifest.',
           faceGrids: [
-            { filledCount: 12, manifestKey: 'nativePeeps' },
-            { filledCount: 11, manifestKey: 'multiracePeeps' },
-            { filledCount: 9,  manifestKey: 'latinxPeeps' },
-            { filledCount: 9,  manifestKey: 'mideastPeeps' },
-            { filledCount: 8,  manifestKey: 'blackPeeps' },
-            { filledCount: 5,  manifestKey: 'whitePeeps' }
+            { filledCount: 12, headManifestKey: 'nativePeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 11, headManifestKey: 'multiracePeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9,  headManifestKey: 'latinxPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9,  headManifestKey: 'mideastPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 8,  headManifestKey: 'blackPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 5,  headManifestKey: 'whitePeeps', faceManifestKey: 'facePeeps' }
           ]
         },
         {
           title: 'Scene 2: Two Grids',
           description: 'This scene displays 2 grids.',
           faceGrids: [
-            { filledCount: 13, manifestKey: 'nativePeeps' },
-            { filledCount: 9,  manifestKey: 'multiracePeeps' }
+            { filledCount: 13, headManifestKey: 'nativePeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9,  headManifestKey: 'multiracePeeps', faceManifestKey: 'facePeeps' }
           ]
         },
         {
           title: 'Scene 3: Seven Grids',
           description: 'This scene displays 7 grids.',
           faceGrids: [
-            { filledCount: 14, manifestKey: 'nativePeeps' },
-            { filledCount: 10, manifestKey: 'latinxPeeps' },
-            { filledCount: 9,  manifestKey: 'multiracePeeps' },
-            { filledCount: 9,  manifestKey: 'mideastPeeps' },
-            { filledCount: 9,  manifestKey: 'blackPeeps' },
-            { filledCount: 9,  manifestKey: 'whitePeeps' },
-            { filledCount: 6,  manifestKey: 'aapiPeeps' }
+            { filledCount: 14, headManifestKey: 'nativePeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 10, headManifestKey: 'latinxPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9,  headManifestKey: 'multiracePeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9,  headManifestKey: 'mideastPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9,  headManifestKey: 'blackPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9,  headManifestKey: 'whitePeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 6,  headManifestKey: 'aapiPeeps', faceManifestKey: 'facePeeps' }
           ]
         }
       ]
     };
   },
   computed: {
+    // Define currentScene so the template can access it.
     currentScene() {
-      return this.scenes[this.currentSceneIndex];
+      return this.scenes[this.currentSceneIndex] || {};
     },
     processedFaceGrids() {
-      // For each grid in the current scene, attach the corresponding imagePaths array (if the manifest is loaded)
       if (this.manifest && this.currentScene && this.currentScene.faceGrids) {
         return this.currentScene.faceGrids.map(grid => ({
           ...grid,
-          imagePaths: this.manifest[grid.manifestKey] || []
+          headImagePaths: this.manifest[grid.headManifestKey] || [],
+          faceImagePaths: this.manifest[grid.faceManifestKey] || []
         }));
       }
       return [];
@@ -102,7 +104,7 @@ export default {
         .then(response => response.json())
         .then(data => {
           this.manifest = data;
-          console.log(this.manifest);
+          console.log("Manifest loaded:", this.manifest);
         })
         .catch(error => console.error("Error fetching manifest:", error));
     }
@@ -123,7 +125,7 @@ export default {
 }
 
 /* Fixed header */
-.fixed-header {
+/* .fixed-header {
   position: fixed;
   top: 20px;
   left: 0;
@@ -131,7 +133,7 @@ export default {
   z-index: 100;
   text-align: center;
   padding: 20px;
-}
+} */
 
 /* Fixed grid container below the header */
 .fixed-grid-container {
@@ -168,6 +170,7 @@ export default {
   pointer-events: none;
 }
 </style>
+
 
 
 

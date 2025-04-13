@@ -1,4 +1,17 @@
 {
+  "facePeeps": [
+    "Blank.svg",
+    "Concerned.svg",
+    "Contempt.svg",
+    "Driven.svg",
+    "Explaining.svg",
+    "EyesClosed.svg",
+    "Serious.svg",
+    "Solemn.svg",
+    "Suspicious.svg",
+    "Tired.svg",
+    "VeryAngry.svg"
+  ],
   "aapiPeeps": [
     "Afro.svg",
     "Bun.svg",
@@ -11,7 +24,6 @@
     "Hijab.svg",
     "Long.svg",
     "LongAfro.svg",
-    "LongBangs.svg",
     "LongCurly.svg",
     "Medium2.svg",
     "Medium3.svg",
