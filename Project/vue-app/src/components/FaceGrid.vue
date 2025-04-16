@@ -72,8 +72,8 @@ export default {
       this.randomFaceImages = this.generateLayerImages(this.faceImagePaths, 'images/face/');
     },
     generateLayerImages(pathsArray, folderPath) {
-      // Prepend the base URL and the folder path to each filename.
-      const fullPaths = pathsArray.map(filename => `${process.env.BASE_URL}${folderPath}${filename}`);
+      // Prepend the folder path to each filename.
+      const fullPaths = pathsArray.map(filename => `${folderPath}${filename}`);
       this.shuffleArray(fullPaths);
       const selected = [];
       for (let i = 0; i < this.filledCount; i++) {
@@ -91,8 +91,14 @@ export default {
       console.error('Image failed to load:', src);
     },
     changeFace(index) {
-      const availableFaces = this.faceImagePaths.map(filename => `${process.env.BASE_URL}images/face/${filename}`);
+      // On mouseenter, pick a new random face image for this cell.
+      const folderPath = 'images/face/';
+      // Create an array of full paths from the faceImagePaths prop.
+      const availableFaces = this.faceImagePaths.map(filename => `${folderPath}${filename}`);
+      // Choose a new random face.
       const newFace = availableFaces[Math.floor(Math.random() * availableFaces.length)];
+      // Replace the face at this index.
+      // Using Vue.set (or this.$set) to ensure reactivity.
       this.randomFaceImages[index] = newFace;
     }
   }
