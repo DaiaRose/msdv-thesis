@@ -1,27 +1,23 @@
 <template>
   <el-card class="card" shadow="always" :style="{ opacity: 1 - progress }">
     <div>
-      <!-- Display the title and progress percentage -->
-      <strong>{{ data.title }}</strong>
-      
-      <!-- Display the timestamp directly -->
-      <h2>
-        <p>{{ data.timestamp }}</p>
-      </h2>
-      
-      <!-- Display descriptions -->
-      <p>{{ data.shortDescription }}</p>
-      <p>{{ data.longDescription }}</p>
-      
-      <!-- Display the icon -->
-      <img :src="data.iconUrl" :alt="data.title" />
+      <strong class="tag">{{ data.tag }}</strong>
+      <h2 class="date">{{ data.date }}</h2>
+      <p class="description">{{ data.description }}</p>
+
+      <!-- Only render if there's an image URL -->
+      <img
+        v-if="data.image"
+        :src="data.image"
+        :alt="data.altText || 'timeline image'"
+      />
     </div>
   </el-card>
 </template>
 
 <script>
 export default {
-  name: "HistoryCards",
+  name: "TimelineCards",
   props: {
     data: {
       type: Object,

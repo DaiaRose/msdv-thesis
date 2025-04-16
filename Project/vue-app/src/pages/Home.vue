@@ -3,7 +3,7 @@
   <div class="home">
     <h1>Welcome to the Homepage!</h1>
     <!-- Button to navigate to the timeline page -->
-    <router-link to="/HistoryPage">
+    <router-link to="/TimelinePage">
       <button>Go to Timeline</button>
     </router-link>
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -1,10 +1,10 @@
 //src/router/index.js
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../components/Home.vue'
-import HistoryPage from '../components/HistoryPage.vue'
-import CurrentlyStatement from '../components/currentlyStatement.vue'  // New page
-import CensorLaws from '../components/CensorLaws.vue'  // New page
-import FaceGridPage from '../components/FaceGridPage.vue'  // New page
+import Home from '../pages/Home.vue'
+import TimelinePage from '../pages/TimelinePage.vue'
+import CurrentlyStatement from '../pages/currentlyStatement.vue'  // New page
+import CensorLaws from '../pages/CensorLaws.vue'  // New page
+import FaceGridPage from '../pages/FaceGridPage.vue'  // New page
 
 const routes = [
   {
@@ -13,9 +13,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/historyPage',
-    name: 'HistoryPage',
-    component: HistoryPage,
+    path: '/timelinePage',
+    name: 'TimelinePage',
+    component: TimelinePage,
   },
   {
     path: '/currently-statement',

@@ -1,4 +1,4 @@
-<!-- src/components/HistoryPage.vue -->
+<!-- src/pages/TimelinePage.vue -->
 <template>
   <div class="horizontal-timeline">
     <!-- Horizontal scroll container for timeline cards -->
@@ -8,7 +8,7 @@
         :key="card.id"
         class="timeline-item"
       >
-        <HistoryCards
+        <TimelineCards
           :data="card"
           :progress="currentStep === index ? currentProgress : 0"
         />
@@ -22,14 +22,15 @@
 </template>
 
 <script>
-import HistoryCards from "./HistoryCards.vue";
+import TimelineCards from "../components/TimelineCards.vue";
+
 
 const MAX_SVG_WIDTH = 600;
 
 export default {
-  name: "HistoryPage",
+  name: "TimelinePage",
   components: {
-    HistoryCards
+    TimelineCards
   },
   data() {
     return {
