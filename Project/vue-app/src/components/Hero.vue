@@ -13,8 +13,8 @@
   <style>
   .hero {
     /* show the whole image without cropping */
-    background: url("/images/HeroBlank.svg") center top / contain no-repeat;
-  
+    background:url("~@/assets/HeroBlank.svg") center top/contain no-repeat;
+
     /* let the element grow to the natural height of the SVG */
     padding-top: 4rem;          /* space above the heading */
     padding-bottom: 4rem;       /* space below the tagline */

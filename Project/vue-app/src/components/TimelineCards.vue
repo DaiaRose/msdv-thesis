@@ -32,7 +32,7 @@ export default {
     imageUrl() {
       // if data.image is empty, this will be an empty string
       return this.data.image
-        ? `/images/timeline/${this.data.image}`
+        ? `images/timeline/${this.data.image}`
         : "";
     }
   }
