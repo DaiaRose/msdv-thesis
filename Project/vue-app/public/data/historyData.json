@@ -11,8 +11,8 @@
     "date": "1913",
     "description": "Ella Flagg Young, the superintendent of Chicago Public Schools was the first to attempt implementing a city-wide sex-hygiene program in secondary schools",
     "tag": "",
-    "image": "",
-    "altText": ""
+    "image": "Ella.jpeg",
+    "altText": "portrait of Ella Flagg Young"
   },
   {
     "id": 3,
@@ -67,7 +67,7 @@
     "date": "1948",
     "description": "Kinsey Report challenges norms (establishes sex research as a field and sparks debate by showing how many people do taboo things)",
     "tag": "",
-    "image": "",
+    "image": "kinsey.jpg",
     "altText": ""
   },
   {
@@ -123,7 +123,7 @@
     "date": "1969",
     "description": "Stonewall uprising",
     "tag": "",
-    "image": "",
+    "image": "stonewall.png",
     "altText": ""
   },
   {
@@ -275,8 +275,8 @@
     "date": "2015",
     "description": "Obergefell overturned Baker and requires states to issue marriage licenses to same-sex couples and to recognize same-sex marriages.",
     "tag": "",
-    "image": "",
-    "altText": ""
+    "image": "marriage.jpg",
+    "altText": "celebration with a couple kissing in front of white house"
   },
   {
     "id": 36,
@@ -339,7 +339,7 @@
     "date": "2022",
     "description": "Polarization over sex ed, race, and LGBTQ+ issues in schools intensifies including “Don’t Say Gay” laws",
     "tag": "",
-    "image": "",
+    "image": "gayFlorida.png",
     "altText": ""
   }
 ]

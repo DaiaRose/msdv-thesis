@@ -1,4 +1,4 @@
-<!-- src/components/CurrentlyStatement.vue -->
+<!-- src/pages/CurrentlyStatement.vue -->
 <template>
   <div class="currently-statement">
     <p>

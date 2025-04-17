@@ -1,4 +1,4 @@
-<!-- src/components/CensorLaws.vue -->
+<!-- src/pages/CensorLaws.vue -->
 <template>
     <div class="censor-laws">
       <!-- Main Content -->

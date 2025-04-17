@@ -1,31 +1,37 @@
-<!-- src/components/Home.vue -->
+<!-- src/pages/Home.vue -->
 <template>
   <div class="home">
-    <h1>Welcome to the Homepage!</h1>
-    <!-- Button to navigate to the timeline page -->
-    <router-link to="/TimelinePage">
-      <button>Go to Timeline</button>
+    <Hero />
+
+    <router-link to="/TimelinePage" class="btn">
+      Go to Timeline
     </router-link>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   </div>
 </template>
 
 <script>
-export default {
-  name: "Home",
-};
+import Hero from "@/components/Hero.vue";
+export default { name: "Home", components: { Hero } };
 </script>
 
 <style scoped>
 .home {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; 
+  
   text-align: center;
   color: #000;
-  font-family: "Red Hat Display";
+  font-family: "Red Hat Display", sans-serif;
   font-size: 50px;
-  font-style: normal;
   font-weight: 700;
-  line-height: 70px; /* 42.857% */
+  line-height: 70px;
 }
+
+.hero {
+  width: 100%;            /* ② explicitly cap at viewport   */
+  box-sizing: border-box; /* include padding inside that 100% */
+}
+
 </style>
+

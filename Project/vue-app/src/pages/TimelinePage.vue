@@ -1,20 +1,27 @@
 <!-- src/pages/TimelinePage.vue -->
 <template>
   <div class="horizontal-timeline">
-    <!-- Horizontal scroll container for timeline cards -->
     <div class="scroll-container" @scroll="handleScroll">
       <div
-        v-for="(card, index) in timelineCards"
+        v-for="(card, idx) in timelineCards"
         :key="card.id"
         class="timeline-item"
+        :style="{
+          gridRow:    tagToRow[card.tag] + groupIndexList[idx],
+          gridColumn: dateToColumn[card.date]
+        }"
       >
         <TimelineCards
           :data="card"
-          :progress="currentStep === index ? currentProgress : 0"
+          :progress="currentStep === idx ? currentProgress : 0"
         />
       </div>
-      <!-- Navigation button timeline item -->
-      <div class="timeline-item button-item">
+
+      <!-- “Next Page” button sits in row 1 of the next column -->
+      <div
+        class="timeline-item button-item"
+        :style="{ gridRow: 1, gridColumn: timelineColumns + 1 }"
+      >
         <button @click="goToNextPage">Go to Next Page</button>
       </div>
     </div>
@@ -24,49 +31,79 @@
 <script>
 import TimelineCards from "../components/TimelineCards.vue";
 
-
 const MAX_SVG_WIDTH = 600;
 
 export default {
   name: "TimelinePage",
-  components: {
-    TimelineCards
-  },
+  components: { TimelineCards },
   data() {
     return {
-      timelineCards: [],  // Initialize as an empty array; data will be fetched
+      timelineCards: [],     // loaded from JSON
       width: MAX_SVG_WIDTH,
       currentStep: 0,
       currentProgress: 0,
     };
   },
+  computed: {
+    // 1) Unique tags in appearance order
+    uniqueTags() {
+      return Array.from(new Set(this.timelineCards.map(c => c.tag)));
+    },
+    // 2) Map tag → base row
+    tagToRow() {
+      return this.uniqueTags.reduce((m, tag, i) => {
+        m[tag] = i + 1;
+        return m;
+      }, {});
+    },
+    // 3) Unique dates in appearance order
+    uniqueDates() {
+      return Array.from(new Set(this.timelineCards.map(c => c.date)));
+    },
+    // 4) Map date → column
+    dateToColumn() {
+      return this.uniqueDates.reduce((m, date, i) => {
+        m[date] = i + 1;
+        return m;
+      }, {});
+    },
+    // 5) Number of date‑columns (for placing the Next button)
+    timelineColumns() {
+      return this.uniqueDates.length;
+    },
+    // 6) For each card, index within its (date, tag) group
+    groupIndexList() {
+      const counters = {};
+      return this.timelineCards.map(card => {
+        const key = `${card.date}::${card.tag}`;
+        const idx = counters[key] || 0;
+        counters[key] = idx + 1;
+        return idx;
+      });
+    },
+  },
   methods: {
     handleScroll(event) {
-      const container = event.target;
-      const scrollLeft = container.scrollLeft;
-      const itemWidth = 320; // Adjust if needed
-      this.currentStep = Math.floor(scrollLeft / itemWidth);
+      const scrollLeft = event.target.scrollLeft;
+      const itemWidth  = 200 + 20; // card width + gap
+      this.currentStep    = Math.floor(scrollLeft / itemWidth);
       this.currentProgress = (scrollLeft % itemWidth) / itemWidth;
     },
     onResize() {
       this.width = Math.min(MAX_SVG_WIDTH, window.innerWidth);
     },
     goToNextPage() {
-      // Navigate to the next page using its route name.
-      this.$router.push({ name: 'CurrentlyStatement' });
+      this.$router.push({ name: "CurrentlyStatement" });
     },
     fetchTimelineData() {
-      fetch('data/historyData.json')
-        .then((response) => response.json())
-        .then((data) => {
-          this.timelineCards = data;
-        })
-        .catch((error) => console.error('Error fetching timeline data:', error));
-    }
+      fetch("data/historyData.json")
+        .then(res => res.json())
+        .then(data => { this.timelineCards = data; })
+        .catch(err => console.error("Error fetching timeline data:", err));
+    },
   },
   mounted() {
     window.addEventListener("resize", this.onResize);
-    // Fetch the timeline data when the component mounts.
     this.fetchTimelineData();
   },
   beforeUnmount() {
@@ -79,22 +116,33 @@ export default {
 .horizontal-timeline {
   margin-top: 80px;
 }
+
 .scroll-container {
-  display: flex;
+  display: grid;
+  /* one 200px column per date */
+  grid-auto-flow: column;
+  grid-auto-columns: 200px;
+  /* each row sizes to its content */
+  grid-auto-rows: auto;
+  /* gaps */
+  column-gap: 20px;
+  row-gap: 20px;
+
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 10px;
+  overflow-y: hidden;
+  padding: 0;
 }
+
 .timeline-item {
-  flex: 0 0 auto;
-  width: 300px;
-  margin-right: 20px;
+  width: 200px;            /* match card width */
   scroll-snap-align: start;
 }
+
 .button-item {
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 </style>
+
