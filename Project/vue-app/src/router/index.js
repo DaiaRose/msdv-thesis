@@ -5,6 +5,7 @@ import TimelinePage from '../pages/TimelinePage.vue'
 import CurrentlyStatement from '../pages/currentlyStatement.vue'  // New page
 import CensorLaws from '../pages/CensorLaws.vue'  // New page
 import FaceGridPage from '../pages/FaceGridPage.vue'  // New page
+import impactPage from '../pages/impactPage.vue'  // New page
 
 const routes = [
   {
@@ -33,6 +34,12 @@ const routes = [
     path: '/FaceGridPage',
     name: 'FaceGridPage',
     component: FaceGridPage,
+  },
+
+  {
+    path: '/impactPage',
+    name: 'impactPage',
+    component: impactPage,
   },
 
 ]

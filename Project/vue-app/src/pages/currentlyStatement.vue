@@ -66,6 +66,8 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 70px;
+  margin-left: 30px;
+  margin-right: 30px;
   /* background-color: blueviolet; */
 }
 

@@ -1,37 +1,60 @@
 <!-- src/components/Hero.vue -->
 <template>
-    <section class="hero">
+  <section class="hero">
+    <div class="inner">
       <h1 class="title">THE MISSING CHAPTER</h1>
-      <h2 class="tagline">QUEER YOUTH IN SEX ED</h2>
-    </section>
-  </template>
-  
-  <script>
-  export default { name: "Hero" };
-  </script>
-  
-  <style>
-  .hero {
-    /* show the whole image without cropping */
-    background:url("~@/assets/HeroBlank.svg") center top/contain no-repeat;
+      <router-link to="/TimelinePage" class="tagline">
+      QUEER YOUTH IN SEX ED
+      </router-link>
+    </div>
+  </section>
+</template>
 
-    /* let the element grow to the natural height of the SVG */
-    padding-top: 4rem;          /* space above the heading */
-    padding-bottom: 4rem;       /* space below the tagline */
-  
-    text-align: center;
-    color: #fff;
-    box-sizing: border-box;
-  }
-  
-  .title   { margin: 0 0 1rem; font: 700 3rem/1 "Red Hat Display", sans-serif; }
-  .tagline { margin: 0;         font: 700 1.75rem/1 "Red Hat Display", sans-serif; }
-  
-  @media (min-width: 768px) {
-    .title   { font-size: 4rem; }
-    .tagline { font-size: 2.25rem; }
-  }
-  </style>
+<script>
+export default { name: "Hero" };
+</script>
+
+<style>
+/* full‑screen hero */
+.hero{
+  height:100vh;                                    /* full viewport height   */
+  background:url("~@/assets/HeroBlank.svg") center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  box-sizing:border-box;
+}
+
+/* Top-left */
+.title {
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+  margin: 0;
+  font: 700 3rem "Red Hat Display", sans-serif;
+}
+
+/* Bottom-right */
+.tagline {
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  bottom: 2rem;
+  right: 4rem;
+  margin: 0;
+  font: 700 3rem "Red Hat Display", sans-serif;
+  text-align: right;
+}
+
+.tagline:hover {
+  color: #ddd;
+}
+
+.cta:hover{ background:#000; color:#fff; }
+
+</style>
+
   
   
   
