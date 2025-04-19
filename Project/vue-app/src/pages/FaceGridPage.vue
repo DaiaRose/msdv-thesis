@@ -27,6 +27,9 @@
     <!-- Invisible scroll container to drive scene changes -->
     <div class="scroll-container"></div>
   </div>
+  <div class="nextbutton-item">
+          <button @click="goToNextPage">Go to Next Page</button>
+  </div>
 </template>
 
 <script>
@@ -107,6 +110,9 @@ export default {
           console.log("Manifest loaded:", this.manifest);
         })
         .catch(error => console.error("Error fetching manifest:", error));
+    },
+    goToNextPage() {
+      this.$router.push({ name: 'CurrentlyInclude' });
     }
   },
   mounted() {
@@ -115,8 +121,9 @@ export default {
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-  }
+  },
 };
+
 </script>
 
 <style scoped>

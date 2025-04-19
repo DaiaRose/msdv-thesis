@@ -54,16 +54,23 @@ export default {
     this.generateUniqueImages();
   },
   watch: {
-    headImagePaths(newVal) {
-      if (newVal && newVal.length) {
-        this.generateUniqueImages();
-      }
-    },
-    faceImagePaths(newVal) {
-      if (newVal && newVal.length) {
-        this.generateUniqueImages();
-      }
+  headImagePaths() {
+    this.generateUniqueImages();
+  },
+  faceImagePaths() {
+    this.generateUniqueImages();
+  },
+  headManifestKey() {
+    this.generateUniqueImages();
+  },
+  faceManifestKey() {
+    this.generateUniqueImages();
+  },
+  filledCount(newVal, oldVal) {
+    if (newVal > oldVal) {
+      this.generateUniqueImages(); // regenerate when count increases
     }
+  }
   },
   methods: {
     generateUniqueImages() {

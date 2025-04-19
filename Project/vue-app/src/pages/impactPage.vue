@@ -28,7 +28,7 @@
     },
     data() {
       return {
-        selectedViz: "bullying", // default selection
+        selectedViz: "depressive", // default selection
       };
     },
     computed: {

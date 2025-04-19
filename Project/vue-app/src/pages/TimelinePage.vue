@@ -93,7 +93,7 @@ export default {
       this.width = Math.min(MAX_SVG_WIDTH, window.innerWidth);
     },
     goToNextPage() {
-      this.$router.push({ name: "CurrentlyStatement" });
+      this.$router.push({ name: "CurrentlyCensor" });
     },
     fetchTimelineData() {
       fetch("data/historyData.json")
