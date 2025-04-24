@@ -18,7 +18,7 @@ export default { name: "Hero" };
 /* full‑screen hero */
 .hero{
   height:100vh;                                    /* full viewport height   */
-  background:url("~@/assets/HeroBlank.svg") center/cover no-repeat;
+  background:url("~@/assets/HeroBlank.png") center/cover no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
