@@ -1,7 +1,6 @@
 <template>
   <el-card class="card" shadow="always" :style="{ opacity: 1 - progress }">
     <div>
-      <strong class="tag">{{ data.tag }}</strong>
       <h2 class="date">{{ data.date }}</h2>
       <p class="description">{{ data.description }}</p>
 
@@ -43,17 +42,36 @@ export default {
 .card {
   margin: 0 auto;
   width: 200px;
+  border: none;
+  background: var(--lilac);
 }
 
-/* Make sure images never overflow and keep their aspect ratio */
+/* Remove the top padding Element UI gives the card body */
+.card ::v-deep .el-card__body {
+  padding-top: 0.5em;
+  /* keep some bottom padding if you like */
+  padding-bottom: 0.5em;
+}
+
+/* Kill the default top margin on your <h2 class="date"> */
+.card .date {
+  margin: 0 0 0.25em; /* top 0, bottom small */
+  font-size: 1em; 
+}
+
+/* If you need, reset any <p> margins too */
+.card .description {
+  margin: 0;
+}
+
+/* Your existing image rules */
 .card img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin-top: 0.5em;     /* give a little breathing room */
-  border-radius: 4px;    /* optional rounded corners */
-  object-fit: cover;     /* crop/scale if you want a uniform box */
+  margin-top: 0.5em;
+  object-fit: cover;
 }
-
 </style>
+
 

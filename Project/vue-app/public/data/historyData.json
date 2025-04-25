@@ -3,14 +3,15 @@
     "id": 1,
     "date": "1910s and earlier-",
     "description": "Hygiene education in the United States focused primarily on cleanliness, immorality, and sexually transmitted diseases. ",
-    "tag": "",
+    "tag": "top",
+    "image": "hygieneEd.png",
     "altText": ""
   },
   {
     "id": 2,
     "date": "1913",
     "description": "Ella Flagg Young, the superintendent of Chicago Public Schools was the first to attempt implementing a city-wide sex-hygiene program in secondary schools",
-    "tag": "",
+    "tag": "top",
     "image": "Ella.jpeg",
     "altText": "portrait of Ella Flagg Young"
   },
@@ -18,15 +19,15 @@
     "id": 3,
     "date": "1917",
     "description": "Fight against venereal disease as matter of national security",
-    "tag": "",
-    "image": "",
+    "tag": "top",
+    "image": "disease.png",
     "altText": ""
   },
   {
     "id": 4,
     "date": "1917",
     "description": "US engaged in World War 1",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -34,7 +35,7 @@
     "id": 5,
     "date": "1919",
     "description": "The U.S. Department of Labor’s Children’s Bureau releases a report suggesting sex education during school could have better protected soldiers from STIs.",
-    "tag": "",
+    "tag": "top",
     "image": "",
     "altText": ""
   },
@@ -42,15 +43,15 @@
     "id": 6,
     "date": "1920",
     "description": "(white) Women gain right to vote",
-    "tag": "",
-    "image": "",
+    "tag": "mid",
+    "image": "womenVote.jpg",
     "altText": ""
   },
   {
     "id": 7,
     "date": "1930s",
     "description": "Human sexuality courses start to appear in colleges",
-    "tag": "",
+    "tag": "top",
     "image": "",
     "altText": ""
   },
@@ -58,7 +59,7 @@
     "id": 8,
     "date": "",
     "description": "The Great Depression and then US joins WW2",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -66,7 +67,7 @@
     "id": 9,
     "date": "1948",
     "description": "Kinsey Report challenges norms (establishes sex research as a field and sparks debate by showing how many people do taboo things)",
-    "tag": "",
+    "tag": "mid",
     "image": "kinsey.jpg",
     "altText": ""
   },
@@ -74,15 +75,15 @@
     "id": 10,
     "date": "1950",
     "description": "Homophile movement growing",
-    "tag": "",
-    "image": "",
+    "tag": "low",
+    "image": "homophile.jpg",
     "altText": ""
   },
   {
     "id": 11,
     "date": "1953",
     "description": "Cold war",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -90,15 +91,15 @@
     "id": 12,
     "date": "1953",
     "description": "lavender scare",
-    "tag": "",
-    "image": "",
+    "tag": "mid",
+    "image": "lavender.jpg",
     "altText": ""
   },
   {
     "id": 13,
     "date": "1964",
     "description": "Sexuality Information and Education Council of the US (SIECUS) is founded.",
-    "tag": "",
+    "tag": "top",
     "image": "",
     "altText": ""
   },
@@ -106,7 +107,7 @@
     "id": 14,
     "date": "1964",
     "description": "Civil Rights Act (Title VII prohibits employment discrimination based on sex)",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -114,7 +115,7 @@
     "id": 15,
     "date": "1965",
     "description": "Griswold v. Connecticut legalizes birth control for married couples",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -122,7 +123,7 @@
     "id": 16,
     "date": "1969",
     "description": "Stonewall uprising",
-    "tag": "",
+    "tag": "low",
     "image": "stonewall.png",
     "altText": ""
   },
@@ -130,15 +131,15 @@
     "id": 17,
     "date": "1970",
     "description": "Our Bodies, Ourselves published",
-    "tag": "",
-    "image": "",
+    "tag": "top",
+    "image": "ourBodies.jpeg",
     "altText": ""
   },
   {
     "id": 18,
     "date": "1972",
     "description": "Title IX passed",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -146,7 +147,7 @@
     "id": 19,
     "date": "1973",
     "description": "row v wade",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -154,23 +155,23 @@
     "id": 20,
     "date": "1973",
     "description": "Homosexuality declassified as disorder",
-    "tag": "",
-    "image": "",
+    "tag": "low",
+    "image": "declassified.png",
     "altText": ""
   },
   {
     "id": 21,
     "date": "1977",
     "description": "Anita Bryant’s anti-gay campaign Save Our Children campaign",
-    "tag": "",
-    "image": "",
+    "tag": "low",
+    "image": "anita.jpg",
     "altText": ""
   },
   {
     "id": 22,
     "date": "1981",
     "description": "The global pandemic of HIV/AIDS begins, it is an ongoing worldwide public health issue.",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -178,7 +179,7 @@
     "id": 23,
     "date": "1987",
     "description": "“Ego-dystonic homosexuality” removed from DSM",
-    "tag": "",
+    "tag": "low",
     "image": "",
     "altText": ""
   },
@@ -186,7 +187,7 @@
     "id": 24,
     "date": "1990",
     "description": "School-based sex ed curricula shift toward risk reduction (not abstinence-only, but not fully comprehensive either)",
-    "tag": "",
+    "tag": "top",
     "image": "",
     "altText": ""
   },
@@ -194,7 +195,7 @@
     "id": 25,
     "date": "1990",
     "description": "ACT UP protests",
-    "tag": "",
+    "tag": "low",
     "image": "",
     "altText": ""
   },
@@ -202,7 +203,7 @@
     "id": 26,
     "date": "mid-1990s",
     "description": "Every state has a mandate for AIDS education",
-    "tag": "",
+    "tag": "top",
     "image": "",
     "altText": ""
   },
@@ -210,7 +211,7 @@
     "id": 27,
     "date": "1981",
     "description": "Abstinence-only funding begins federally.",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -218,7 +219,7 @@
     "id": 28,
     "date": "1996",
     "description": "Defense of Marriage Act (DOMA)",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -226,15 +227,15 @@
     "id": 29,
     "date": "2000",
     "description": "U.S. Surgeon General calls for comprehensive sex ed",
-    "tag": "",
-    "image": "",
+    "tag": "top",
+    "image": "surgeon.jpg",
     "altText": ""
   },
   {
     "id": 30,
     "date": "2003",
     "description": "Lawrence v. Texas sodomy laws struck",
-    "tag": "",
+    "tag": "low",
     "image": "",
     "altText": ""
   },
@@ -242,15 +243,15 @@
     "id": 31,
     "date": "2004",
     "description": "First same-sex marriage in Massachusetts.",
-    "tag": "",
-    "image": "",
+    "tag": "low",
+    "image": "MA-marriage.jpg",
     "altText": ""
   },
   {
     "id": 32,
     "date": "2010",
     "description": "Asexual visibility rises — AVEN (Asexual Visibility & Education Network) gains traction, communities create 'Ace Week' and push for inclusion in queer spaces and sex ed",
-    "tag": "",
+    "tag": "low",
     "image": "",
     "altText": ""
   },
@@ -258,23 +259,23 @@
     "id": 33,
     "date": "2013",
     "description": "M.C. v. Aaronson: First U.S. lawsuit over non-consensual surgery on an intersex child (South Carolina). Case draws national attention to intersex rights.",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
   {
     "id": 34,
     "date": "2014",
-    "description": "Trans youth visibility rises",
-    "tag": "",
-    "image": "",
+    "description": "Trans visibility rises nationally",
+    "tag": "low",
+    "image": "transgenderCover.jpeg",
     "altText": ""
   },
   {
     "id": 35,
     "date": "2015",
     "description": "Obergefell overturned Baker and requires states to issue marriage licenses to same-sex couples and to recognize same-sex marriages.",
-    "tag": "",
+    "tag": "mid",
     "image": "marriage.jpg",
     "altText": "celebration with a couple kissing in front of white house"
   },
@@ -282,7 +283,7 @@
     "id": 36,
     "date": "2016",
     "description": "CA first state to mandate that LGBTQ+ content be included in sex ed",
-    "tag": "",
+    "tag": "top",
     "image": "",
     "altText": ""
   },
@@ -290,7 +291,7 @@
     "id": 37,
     "date": "2016",
     "description": "Obama-era Title IX guidance clarifies protections for trans students — includes access to bathrooms and pronouns in schools",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -298,7 +299,7 @@
     "id": 38,
     "date": "2017",
     "description": "Trump rescinds Title IX guidance protecting trans students — major rollback on federal recognition",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -306,7 +307,7 @@
     "id": 39,
     "date": "2018",
     "description": "U.N. and WHO release updated guidelines supporting comprehensive sexuality education, globally endorsed (not adopted by US)",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -314,7 +315,7 @@
     "id": 40,
     "date": "2019",
     "description": "COVID-19 pandemic",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -322,7 +323,7 @@
     "id": 41,
     "date": "2020",
     "description": "SCOTUS: Civil Rights Act covers LGBTQ+",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -330,7 +331,7 @@
     "id": 42,
     "date": "2022",
     "description": "Roe v Wade is overturned",
-    "tag": "",
+    "tag": "mid",
     "image": "",
     "altText": ""
   },
@@ -338,7 +339,7 @@
     "id": 43,
     "date": "2022",
     "description": "Polarization over sex ed, race, and LGBTQ+ issues in schools intensifies including “Don’t Say Gay” laws",
-    "tag": "",
+    "tag": "top",
     "image": "gayFlorida.png",
     "altText": ""
   }

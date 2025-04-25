@@ -88,7 +88,7 @@ export default {
 <style scoped>
 
 .currently-statement {
-  color: var(--dark, #342E38);
+  color: var(--dark);
   font-family: "Times New Roman";
   font-size: 60px;
   font-style: normal;
@@ -100,21 +100,21 @@ export default {
 
 .inline-button {
   display: inline-block;
-  color: var(--dark, #342E38);
+  color: var(--dark);
   padding: 0px 10px;
   text-decoration: none;
   border-radius: 15px;
-  background: var(--light-orange, #FFC0A5);
+  background: var(--lightOrange);
   cursor: pointer;
   line-height: 1;
 }
 
 .inline-button:hover {
-  background: var(--orange, #F99368);
+  background: var(--orange);
 }
 
 .el-dropdown-link {
-  color: var(--dark, #342E38);
+  color: var(--dark);
   font-family: "Times New Roman";
   vertical-align: baseline;
   font-size: 60px;
@@ -129,7 +129,7 @@ export default {
   display: inline-block;
   padding: 0 10px;
   border-radius: 15px;
-  background: #D1B3E2;
+  background: var(--lilac);
   cursor: pointer;
   line-height: 1;
 }

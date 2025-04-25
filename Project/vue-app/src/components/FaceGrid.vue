@@ -167,11 +167,11 @@ export default {
 }
 
 .square.on {
-  background-color: #D1B3E2;
+  background-color: var(--lilac);
 }
 
 .square.off {
-  background-color: grey;
+  background-color: var(--silver);
 }
 </style>
 

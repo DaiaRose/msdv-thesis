@@ -114,7 +114,7 @@ export default {
 
 <style scoped>
 .horizontal-timeline {
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .scroll-container {
@@ -126,11 +126,14 @@ export default {
   grid-auto-rows: auto;
   /* gaps */
   column-gap: 20px;
-  row-gap: 20px;
+  row-gap: 10px;
 
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0;
+
+  /* Enable scroll snapping */
+  scroll-snap-type: x mandatory;
 }
 
 .timeline-item {
@@ -145,4 +148,3 @@ export default {
   justify-content: center;
 }
 </style>
-
