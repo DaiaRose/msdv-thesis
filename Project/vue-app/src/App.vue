@@ -35,6 +35,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: var(--baseGrey);
+  font-size: 1.2rem;
+  color: var(--dark);
+  font-weight: 400;
 }
 </style>
 

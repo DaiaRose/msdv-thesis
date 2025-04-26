@@ -68,12 +68,14 @@ export default {
 .card ::v-deep .el-card__body {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  color: var(--dark);
 }
 
 /* Kill the default top margin on your <h2 class="date"> */
 .card .date {
   margin: 0 0 0.25em;
   font-size: 1em;
+  color: var(--dark);
 }
 
 /* Reset paragraph margins */

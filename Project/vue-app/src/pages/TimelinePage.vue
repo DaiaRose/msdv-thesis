@@ -1,11 +1,29 @@
 <!-- src/pages/TimelinePage.vue -->
 <template>
   <div class="horizontal-timeline">
-    <!-- Label cards on left, matching next-button style -->
+    <!-- Label cards on left, matching next-button style for structure but vertical text orientation -->
     <div class="label-container">
-      <button class="next-button">US Sex Ed</button>
-      <button class="next-button">National Movements & Events</button>
-      <button class="next-button">Queer History</button>
+      <button
+        class="vertical-button"
+        :class="{ active: selectedTag === 'top' }"
+        @click="selectTag('top')"
+      >
+        US Sex Ed
+      </button>
+      <button
+        class="vertical-button"
+        :class="{ active: selectedTag === 'mid' }"
+        @click="selectTag('mid')"
+      >
+        National Movements & Events
+      </button>
+      <button
+        class="vertical-button"
+        :class="{ active: selectedTag === 'low' }"
+        @click="selectTag('low')"
+      >
+        Queer History
+      </button>
     </div>
 
     <!-- Full-screen background on hover -->
@@ -24,7 +42,7 @@
       >
         <!-- Cards for this date -->
         <div
-          v-for="(card, idx) in cardsByDate[date]"
+          v-for="(card, idx) in filteredCardsByDate[date]"
           :key="card.id"
           class="timeline-item"
           :class="{ faded: hoveredCard && hoveredCard !== card.id }"
@@ -67,7 +85,8 @@ export default {
       currentStep: 0,
       currentProgress: 0,
       hoveredCard: null,
-      hoveredImage: ""
+      hoveredImage: "",
+      selectedTag: null
     };
   },
   computed: {
@@ -81,7 +100,18 @@ export default {
         if (map[card.date]) map[card.date].push(card);
       });
       return map;
-    }
+    },
+    filteredCardsByDate() {
+    const map = {};
+    this.uniqueDates.forEach(date => { map[date] = []; });
+    this.timelineCards.forEach(card => {
+      // only include cards matching the selectedTag (or all if none)
+      if (!this.selectedTag || card.tag === this.selectedTag) {
+        map[card.date].push(card);
+      }
+    });
+    return map;
+    },
   },
   methods: {
     onHover(id, image) {
@@ -108,9 +138,12 @@ export default {
       const itemWidth = 240 + 20;
       this.currentStep = Math.floor(scrollLeft / itemWidth);
       this.currentProgress = (scrollLeft % itemWidth) / itemWidth;
-    },
+    }, 
+    selectTag(tag) {
+    this.selectedTag = tag;
+  },
     goToNextPage() {
-      this.$router.push({ name: 'CurrentlyStatement' });
+      this.$router.push({ name: 'CurrentlyCensor' });
     },
     fetchTimelineData() {
       fetch('data/historyData.json')
@@ -133,6 +166,45 @@ export default {
 </script>
 
 <style scoped>
+.vertical-button {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: var(--dark);
+  background: var(--lightOrange);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 5rem;
+  transition: background 0.2s ease;
+  font-size: 1.2rem;
+  color: var(--dark);
+  font-weight: 400;
+}
+
+.vertical-button:hover {
+  background: var(--orange);
+}
+
+.next-button {
+  width: 240px;
+  padding: 0.75em;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: inherit;
+  background: var(--lightOrange);
+  color: var(--dark);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  background: var(--orange);
+}
+
 .horizontal-timeline {
   display: flex;
   align-items: flex-start;
@@ -145,6 +217,22 @@ export default {
   flex-direction: column;
   gap: 20px;
   margin-right: 20px;
+}
+
+.label-button,
+.next-button {
+  width: 240px;
+  padding: 0.75em;
+  color: var(--dark);
+  background: var(--lightOrange);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.label-button:hover,
+.next-button:hover {
+  background: var(--orange);
 }
 
 .scroll-container {
@@ -175,23 +263,6 @@ export default {
   width: 240px;
 }
 
-.next-button {
-  width: 240px;
-  padding: 0.75em;
-  font-size: 1em;
-  font-family: inherit;
-  background: var(--lightOrange);
-  color: var(--dark);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.next-button:hover {
-  background: var(--orange);
-}
-
 .faded {
   opacity: 0;
   filter: grayscale(100%);
@@ -218,5 +289,6 @@ export default {
   z-index: 1;
 }
 </style>
+
 
 
