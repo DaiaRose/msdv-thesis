@@ -36,7 +36,7 @@ const routes = [
   {
     path: '/FaceGridPage',
     name: 'FaceGridPage',
-    component: FaceGridPage
+    component: FaceGridPage,
   },
   {
     path: '/CurrentlyInclude',

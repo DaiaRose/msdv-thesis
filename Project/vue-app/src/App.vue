@@ -1,23 +1,34 @@
 <template>
   <div id="app">
     <router-view v-slot="{ Component, route }">
-    <transition :name="transitionName" mode="out-in">
-      <!-- give the dynamic component a key so Vue really re-creates it each time -->
-      <component
-        :is="Component"
-        :key="route.fullPath"
-        class="view-wrapper"
-      />
-    </transition>
-  </router-view>
+      <!-- only wrap in <transition> if this route has a transition declared -->
+      <template v-if="route.meta.transition">
+        <transition :name="computedTransition" mode="out-in">
+          <component
+            :is="Component"
+            :key="route.fullPath"
+            class="view-wrapper"
+          />
+        </transition>
+      </template>
+      <!-- otherwise render it directly, no transition -->
+      <template v-else>
+        <component 
+          :is="Component" 
+          :key="route.fullPath" 
+        />
+      </template>
+    </router-view>
   </div>
 </template>
 
 <script>
 export default {
   computed: {
-    // fall back to a simple fade, or 'none' if you really want no animation
-    transitionName() {
+    computedTransition() {
+      if (this.$route.meta.direction === 'back') {
+        return 'scroll-up'
+      }
       return this.$route.meta.transition || 'fade'
     }
   }
@@ -77,16 +88,6 @@ background: var(--orange);
 .scroll-down-enter-active,
 .scroll-down-leave-active {
   transition: transform 0.6s ease;
-}
-
-/* fallback fade (for all other page switches) */
-.fade-enter-from { opacity: 0; }
-.fade-enter-to   { opacity: 1; }
-.fade-leave-from { opacity: 1; }
-.fade-leave-to   { opacity: 0; }
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
 }
 
 </style>

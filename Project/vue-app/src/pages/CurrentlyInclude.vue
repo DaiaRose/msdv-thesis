@@ -7,7 +7,7 @@
         or discussion of sexual health for LGBTQ youth. 4 states explicitly require instruction that discriminates against LGBTQ people.
         Student reports of their sex ed experience in
         <el-dropdown trigger="click" @command="handleCommand">
-          <span class="el-dropdown-link inline-button">
+          <span class="el-dropdown-link styled-box">
             {{ selectedOption }} <i class="el-icon-arrow-down"></i>
           </span>
           <template #dropdown>

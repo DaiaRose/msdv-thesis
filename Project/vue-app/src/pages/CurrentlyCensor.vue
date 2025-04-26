@@ -113,6 +113,9 @@ export default {
   position: relative;
 }
 
+.el-dropdown-link:hover {
+  background: var(--purple);
+}
 .styled-box {
   display: inline-block;
   padding: 0 10px;
