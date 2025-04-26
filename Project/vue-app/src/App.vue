@@ -1,16 +1,27 @@
 <template>
   <div id="app">
-    
-
-    <!-- Render current route -->
-    <router-view />
+    <router-view v-slot="{ Component, route }">
+    <transition :name="transitionName" mode="out-in">
+      <!-- give the dynamic component a key so Vue really re-creates it each time -->
+      <component
+        :is="Component"
+        :key="route.fullPath"
+        class="view-wrapper"
+      />
+    </transition>
+  </router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
-};
+  computed: {
+    // fall back to a simple fade, or 'none' if you really want no animation
+    transitionName() {
+      return this.$route.meta.transition || 'fade'
+    }
+  }
+}
 </script>
 
 <style>
@@ -57,6 +68,27 @@ cursor: pointer;
 .next-button:hover {
 background: var(--orange);
 }
+
+/* scroll-down (only for CurrentlyCensor ↔ CensorLaws) */
+.scroll-down-enter-from { transform: translateY(100%); }
+.scroll-down-enter-to   { transform: translateY(0%);   }
+.scroll-down-leave-from { transform: translateY(0%);   }
+.scroll-down-leave-to   { transform: translateY(-100%); }
+.scroll-down-enter-active,
+.scroll-down-leave-active {
+  transition: transform 0.6s ease;
+}
+
+/* fallback fade (for all other page switches) */
+.fade-enter-from { opacity: 0; }
+.fade-enter-to   { opacity: 1; }
+.fade-leave-from { opacity: 1; }
+.fade-leave-to   { opacity: 0; }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
 </style>
 
 

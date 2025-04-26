@@ -12,40 +12,42 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: Home
   },
   {
     path: '/timelinePage',
     name: 'TimelinePage',
-    component: TimelinePage,
+    component: TimelinePage
   },
   {
     path: '/CurrentlyCensor',
     name: 'CurrentlyCensor',
     component: CurrentlyCensor,
+    meta: { transition: 'scroll-down' }
   },
 
   {
     path: '/CensorLaws',
     name: 'CensorLaws',
     component: CensorLaws,
+    meta: { transition: 'scroll-down' }
   },
 
   {
     path: '/FaceGridPage',
     name: 'FaceGridPage',
-    component: FaceGridPage,
+    component: FaceGridPage
   },
   {
     path: '/CurrentlyInclude',
     name: 'CurrentlyInclude',
-    component: CurrentlyInclude,
+    component: CurrentlyInclude
   },
 
   {
     path: '/impactPage',
     name: 'impactPage',
-    component: impactPage,
+    component: impactPage
   },
 
 ]
@@ -55,6 +57,7 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
 })
+
 
 export default router
 
