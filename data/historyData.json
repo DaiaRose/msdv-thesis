@@ -5,15 +5,17 @@
     "description": "Hygiene education in the United States focused primarily on cleanliness, immorality, and sexually transmitted diseases. ",
     "tag": "top",
     "image": "hygieneEd.png",
-    "altText": ""
+    "altText": "",
+    "link":"https://babel.hathitrust.org/cgi/pt?id=wu.89101141208&seq=7"
   },
   {
     "id": 2,
     "date": "1913",
     "description": "Ella Flagg Young, the superintendent of Chicago Public Schools was the first to attempt implementing a city-wide sex-hygiene program in secondary schools",
     "tag": "top",
-    "image": "Ella.jpeg",
-    "altText": "portrait of Ella Flagg Young"
+    "image": "Ella.png",
+    "altText": "portrait of Ella Flagg Young",
+    "link":"https://www.britannica.com/biography/Ella-Flagg-Young"
   },
   {
     "id": 3,
@@ -21,103 +23,98 @@
     "description": "Fight against venereal disease as matter of national security",
     "tag": "top",
     "image": "disease.png",
-    "altText": ""
+    "altText": "",
+    "link":"https://commons.trincoll.edu/edreform/author/efaragun/"
   },
   {
     "id": 4,
     "date": "1917",
     "description": "US engaged in World War 1",
-    "tag": "mid",
-    "image": "",
-    "altText": ""
+    "tag": "mid"
   },
   {
     "id": 5,
     "date": "1919",
     "description": "The U.S. Department of Labor’s Children’s Bureau releases a report suggesting sex education during school could have better protected soldiers from STIs.",
     "tag": "top",
-    "image": "",
-    "altText": ""
-  },
-  {
-    "id": 6,
-    "date": "1920",
-    "description": "(white) Women gain right to vote",
-    "tag": "mid",
-    "image": "womenVote.jpg",
-    "altText": ""
+    "image": "defeated.png",
+    "altText": "",
+    "link":"https://fraser.stlouisfed.org/title/standards-child-welfare-8348?page=264"
   },
   {
     "id": 7,
-    "date": "1930s",
-    "description": "Human sexuality courses start to appear in colleges",
-    "tag": "top",
-    "image": "",
-    "altText": ""
+    "date": "",
+    "description": "The Great Depression and then US joins WW2",
+    "tag": "mid"
   },
   {
     "id": 8,
-    "date": "",
-    "description": "The Great Depression and then US joins WW2",
-    "tag": "mid",
-    "image": "",
-    "altText": ""
+    "date": "1940s-50s",
+    "description": "Marriage courses start to appear in colleges which address human sexuality amoung other practical matters",
+    "tag": "top",
+    "image": "marriageCourse.png",
+    "altText": "",
+    "link":"https://universityarchives.princeton.edu/2018/02/training-for-love-and-family-princeton-universitys-marriage-course/"
   },
   {
     "id": 9,
     "date": "1948",
     "description": "Kinsey Report challenges norms (establishes sex research as a field and sparks debate by showing how many people do taboo things)",
     "tag": "mid",
-    "image": "kinsey.jpg",
-    "altText": ""
+    "image": "kinsey.png",
+    "altText": "",
+    "link":"https://www.pbs.org/wgbh/americanexperience/features/kinsey-news/"
   },
   {
     "id": 10,
     "date": "1950",
     "description": "Homophile movement growing",
     "tag": "low",
-    "image": "homophile.jpg",
-    "altText": ""
+    "image": "homophile.png",
+    "altText": "",
+    "link":"https://info.umkc.edu/makinghistory/the-homophile-movement/"
   },
   {
     "id": 11,
     "date": "1953",
     "description": "Cold war",
-    "tag": "mid",
-    "image": "",
-    "altText": ""
+    "tag": "mid"
   },
   {
     "id": 12,
     "date": "1953",
     "description": "lavender scare",
     "tag": "mid",
-    "image": "lavender.jpg",
-    "altText": ""
+    "image": "lavender.png",
+    "altText": "",
+    "link":"https://archivesfoundation.org/newsletter/the-lavender-scare/"
   },
   {
     "id": 13,
     "date": "1964",
     "description": "Sexuality Information and Education Council of the US (SIECUS) is founded.",
     "tag": "top",
-    "image": "",
-    "altText": ""
+    "image": "calderone.png",
+    "altText": "",
+    "link":"https://www.rochester.edu/pr/Review/V84N3/4.3_mary-calderone-ellen-singer-more-grand-dame-sex-education_2022_spring-summer-rochester-review.html"
   },
   {
     "id": 14,
     "date": "1964",
     "description": "Civil Rights Act (Title VII prohibits employment discrimination based on sex)",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "civilRights.png",
+    "altText": "",
+    "link":"https://www.hrdive.com/news/celebrating-60-years-of-title-vii-of-the-civil-rights-act/720381/"
   },
   {
     "id": 15,
     "date": "1965",
     "description": "Griswold v. Connecticut legalizes birth control for married couples",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "griswold.png",
+    "altText": "",
+    "link":"https://www.smithsonianmag.com/smithsonian-institution/the-revolutionary-1965-supreme-court-decision-that-declared-sex-was-a-private-affair-180980089/"
   },
   {
     "id": 16,
@@ -125,31 +122,35 @@
     "description": "Stonewall uprising",
     "tag": "low",
     "image": "stonewall.png",
-    "altText": ""
+    "altText": "",
+    "link":"https://www.wenatcheepride.org/stonewall-riots"
   },
   {
     "id": 17,
     "date": "1970",
     "description": "Our Bodies, Ourselves published",
     "tag": "top",
-    "image": "ourBodies.jpeg",
-    "altText": ""
+    "image": "ourBodies.png",
+    "altText": "",
+    "link":"https://ourbodiesourselves.org/impact-influence"
   },
   {
     "id": 18,
     "date": "1972",
     "description": "Title IX passed",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "1972Mink.png",
+    "altText": "",
+    "link":"https://time.com/6174298/patsy-takemoto-mink-title-ix/"
   },
   {
     "id": 19,
     "date": "1973",
-    "description": "row v wade",
+    "description": "roe v wade",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "JaneRoe.png",
+    "altText": "",
+    "link":"https://www.nytimes.com/2022/05/03/us/what-is-roe-v-wade.html"
   },
   {
     "id": 20,
@@ -157,183 +158,176 @@
     "description": "Homosexuality declassified as disorder",
     "tag": "low",
     "image": "declassified.png",
-    "altText": ""
+    "altText": "",
+    "link":"https://www.nytimes.com/1973/12/16/archives/psychiatrists-in-a-shift-declare-homosexuality-no-mental-illness.html"
   },
   {
     "id": 21,
     "date": "1977",
     "description": "Anita Bryant’s anti-gay campaign Save Our Children campaign",
     "tag": "low",
-    "image": "anita.jpg",
-    "altText": ""
+    "image": "anita.png",
+    "altText": "",
+    "link":"https://www.miamiherald.com/news/local/community/miami-dade/article298286328.html"
+  },
+  {
+    "id": 26,
+    "date": "1981",
+    "description": "Abstinence-only funding begins federally.",
+    "tag": "mid",
+    "image": "DentonHatch.png",
+    "altText": "",
+    "link":"https://siecus.org/wp-content/uploads/2018/07/4-A-Brief-History-of-AOUM-Funding.pdf"
   },
   {
     "id": 22,
     "date": "1981",
     "description": "The global pandemic of HIV/AIDS begins, it is an ongoing worldwide public health issue.",
     "tag": "mid",
-    "image": "",
-    "altText": ""
-  },
-  {
-    "id": 23,
-    "date": "1987",
-    "description": "“Ego-dystonic homosexuality” removed from DSM",
-    "tag": "low",
-    "image": "",
-    "altText": ""
+    "image": "AIDSpatient.png",
+    "altText": "",
+    "link":"https://www.ucsf.edu/news/2021/06/420686/40-years-aids-timeline-epidemic"
   },
   {
     "id": 24,
-    "date": "1990",
-    "description": "School-based sex ed curricula shift toward risk reduction (not abstinence-only, but not fully comprehensive either)",
+    "date": "1990s",
+    "description": "Most states mandate AIDS education. Cultural messaging and school-based curricula shift toward risk reduction (not abstinence-only, but not fully comprehensive either)",
     "tag": "top",
-    "image": "",
-    "altText": ""
+    "image": "safeSex.png",
+    "altText": "",
+    "link":"https://www.rochester.edu/newscenter/8000-posters-one-collection-202502/"
   },
   {
     "id": 25,
     "date": "1990",
     "description": "ACT UP protests",
     "tag": "low",
-    "image": "",
-    "altText": ""
-  },
-  {
-    "id": 26,
-    "date": "mid-1990s",
-    "description": "Every state has a mandate for AIDS education",
-    "tag": "top",
-    "image": "",
-    "altText": ""
+    "image": "aidsProtest.png",
+    "altText": "",
+    "link":"https://www.theguardian.com/society/2023/oct/11/act-up-hiv-aids-1988-fda-protest"
   },
   {
     "id": 27,
-    "date": "1981",
-    "description": "Abstinence-only funding begins federally.",
-    "tag": "mid",
-    "image": "",
-    "altText": ""
-  },
-  {
-    "id": 28,
     "date": "1996",
     "description": "Defense of Marriage Act (DOMA)",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "DOMA.png",
+    "altText": "",
+    "link":"https://www.haasjr.org/about/timeline/lgbt-equality#year-1996"
   },
   {
-    "id": 29,
+    "id": 28,
     "date": "2000",
     "description": "U.S. Surgeon General calls for comprehensive sex ed",
     "tag": "top",
-    "image": "surgeon.jpg",
-    "altText": ""
+    "image": "surgeon.png",
+    "altText": "",
+    "link":"https://www.nytimes.com/2001/06/29/us/surgeon-general-s-report-calls-for-sex-education-beyond-abstinence.html"
   },
   {
-    "id": 30,
+    "id": 29,
     "date": "2003",
     "description": "Lawrence v. Texas sodomy laws struck",
     "tag": "low",
-    "image": "",
-    "altText": ""
+    "image": "sodomyLaw.png",
+    "altText": "",
+    "link":"https://legacy.lambdalegal.org/blog/video-from-criminals-to-newlyweds-in-10-years"
   },
   {
-    "id": 31,
+    "id": 30,
     "date": "2004",
     "description": "First same-sex marriage in Massachusetts.",
     "tag": "low",
-    "image": "MA-marriage.jpg",
-    "altText": ""
+    "image": "MAmarriage.png",
+    "altText": "",
+    "link":"https://www.npr.org/2019/05/17/723649385/the-1st-legally-married-same-sex-couple-wanted-to-lead-by-example"
   },
   {
     "id": 32,
     "date": "2010",
     "description": "Asexual visibility rises — AVEN (Asexual Visibility & Education Network) gains traction, communities create 'Ace Week' and push for inclusion in queer spaces and sex ed",
     "tag": "low",
-    "image": "",
-    "altText": ""
+    "image": "aceWeek.png",
+    "altText": "",
+    "link":"https://aceweek.org/stories/the-history-of-ace-week"
   },
   {
     "id": 33,
     "date": "2013",
     "description": "M.C. v. Aaronson: First U.S. lawsuit over non-consensual surgery on an intersex child (South Carolina). Case draws national attention to intersex rights.",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "crawford.png",
+    "altText": "",
+    "link":"https://interaction.org.au/22464/groundbreaking-us-law-suit/"
   },
   {
     "id": 34,
     "date": "2014",
     "description": "Trans visibility rises nationally",
     "tag": "low",
-    "image": "transgenderCover.jpeg",
-    "altText": ""
+    "image": "transgenderCover.png",
+    "altText": "",
+    "link":"https://time.com/135480/transgender-tipping-point/"
   },
   {
     "id": 35,
     "date": "2015",
     "description": "Obergefell overturned Baker and requires states to issue marriage licenses to same-sex couples and to recognize same-sex marriages.",
     "tag": "mid",
-    "image": "marriage.jpg",
-    "altText": "celebration with a couple kissing in front of white house"
+    "image": "marriage.png",
+    "altText": "celebration with a couple kissing in front of white house",
+    "link":"https://www.nytimes.com/2015/06/27/us/supreme-court-same-sex-marriage.html"
   },
   {
     "id": 36,
     "date": "2016",
     "description": "CA first state to mandate that LGBTQ+ content be included in sex ed",
     "tag": "top",
-    "image": "",
-    "altText": ""
+    "image": "ParentProtest.png",
+    "altText": "",
+    "link":"https://www.latimes.com/local/lanow/la-me-sex-education-california-20190510-story.html"
   },
   {
     "id": 37,
     "date": "2016",
     "description": "Obama-era Title IX guidance clarifies protections for trans students — includes access to bathrooms and pronouns in schools",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "neutralBathroom.png",
+    "altText": "",
+    "link":"https://www.nytimes.com/2016/05/13/us/politics/obama-administration-to-issue-decree-on-transgender-access-to-school-restrooms.html"
   },
   {
     "id": 38,
     "date": "2017",
-    "description": "Trump rescinds Title IX guidance protecting trans students — major rollback on federal recognition",
+    "description": "Trump rescinds Title IX guidance protecting trans students returning decisions to states.",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "protectTransKids.png",
+    "altText": "",
+    "link":"https://www.nbcnews.com/politics/politics-news/judge-blocks-bidens-title-ix-rule-four-states-lgbtq-protections-rcna157133"
   },
   {
     "id": 39,
     "date": "2018",
     "description": "U.N. and WHO release updated guidelines supporting comprehensive sexuality education, globally endorsed (not adopted by US)",
     "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "cseZambia.png",
+    "altText": "",
+    "link":"https://www.unesco.org/en/health-education/cse"
   },
   {
     "id": 40,
     "date": "2019",
     "description": "COVID-19 pandemic",
-    "tag": "mid",
-    "image": "",
-    "altText": ""
+    "tag": "mid"
   },
   {
     "id": 41,
     "date": "2020",
     "description": "SCOTUS: Civil Rights Act covers LGBTQ+",
     "tag": "mid",
-    "image": "",
-    "altText": ""
-  },
-  {
-    "id": 42,
-    "date": "2022",
-    "description": "Roe v Wade is overturned",
-    "tag": "mid",
-    "image": "",
-    "altText": ""
+    "image": "SCOTUS.png",
+    "altText": "",
+    "link":"https://www.newyorker.com/news/our-columnists/the-supreme-court-considers-lgbt-rights-but-cant-stop-talking-about-bathrooms"
   },
   {
     "id": 43,
@@ -341,7 +335,17 @@
     "description": "Polarization over sex ed, race, and LGBTQ+ issues in schools intensifies including “Don’t Say Gay” laws",
     "tag": "top",
     "image": "gayFlorida.png",
-    "altText": ""
+    "altText": "",
+    "link":"https://www.tampabay.com/gallery/2022/03/13/photos-its-ok-to-say-gay-rally-held-in-st-pete/"
+  },
+  {
+    "id": 42,
+    "date": "2022",
+    "description": "Roe v Wade is overturned",
+    "tag": "mid",
+    "image": "byeRoe.png",
+    "altText": "",
+    "link":"https://www.npr.org/2022/05/03/1096094942/roe-wade-overturned-what-happens-next"
   }
 ]
 
