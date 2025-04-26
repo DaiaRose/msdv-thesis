@@ -4,7 +4,7 @@
       <h2 class="date">{{ data.date }}</h2>
       <p class="description">{{ data.description }}</p>
 
-      <!-- If a link is provided, wrap the image in an anchor tag -->
+      <!-- emit hover/leave when the image itself is moused over -->
       <a
         v-if="data.link"
         :href="data.link"
@@ -16,18 +16,22 @@
           :src="imageUrl"
           :alt="data.altText"
           class="card-image clickable"
+          @mouseover="$emit('hover', data.id, data.image)"
+          @mouseleave="$emit('leave')"
         />
       </a>
-      <!-- Otherwise render the image normally -->
       <img
         v-else-if="data.image"
         :src="imageUrl"
         :alt="data.altText"
         class="card-image"
+        @mouseover="$emit('hover', data.id, data.image)"
+        @mouseleave="$emit('leave')"
       />
     </div>
   </el-card>
 </template>
+
 
 <script>
 export default {
@@ -45,7 +49,7 @@ export default {
   computed: {
     imageUrl() {
       return this.data.image
-        ? `/images/timeline/${this.data.image}`
+        ? `images/timeline/${this.data.image}` /*this MUST stay referenced this way so gh-pages reads it*/
         : "";
     },
   },

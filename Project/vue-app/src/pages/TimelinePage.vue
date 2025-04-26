@@ -1,6 +1,13 @@
 <!-- src/pages/TimelinePage.vue -->
 <template>
   <div class="horizontal-timeline">
+    <!-- Label cards on left, matching next-button style -->
+    <div class="label-container">
+      <button class="next-button">US Sex Ed</button>
+      <button class="next-button">National Movements & Events</button>
+      <button class="next-button">Queer History</button>
+    </div>
+
     <!-- Full-screen background on hover -->
     <div
       v-if="hoveredImage"
@@ -22,18 +29,21 @@
           class="timeline-item"
           :class="{ faded: hoveredCard && hoveredCard !== card.id }"
           :style="{ marginTop: cardMarginTop(card) + 'px' }"
-          @mouseover="onHover(card.id, card.image)"
-          @mouseleave="onLeave"
         >
           <TimelineCards
             :data="card"
             :progress="currentStep === globalIndex(date, idx) ? currentProgress : 0"
+            @hover="onHover"
+            @leave="onLeave"
           />
         </div>
       </div>
+
       <!-- Next Page button as last flex child -->
       <div class="button-item" :class="{ faded: hoveredCard }">
-        <button @click="goToNextPage">Go to Next Page</button>
+        <button class="next-button" @click="goToNextPage">
+          What's happening now?
+        </button>
       </div>
     </div>
   </div>
@@ -76,7 +86,7 @@ export default {
   methods: {
     onHover(id, image) {
       this.hoveredCard = id;
-      this.hoveredImage = `/images/timeline/${image}`;
+      this.hoveredImage = `images/timeline/${image}`;
     },
     onLeave() {
       this.hoveredCard = null;
@@ -124,8 +134,17 @@ export default {
 
 <style scoped>
 .horizontal-timeline {
+  display: flex;
+  align-items: flex-start;
   margin-top: 50px;
   position: relative;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-right: 20px;
 }
 
 .scroll-container {
@@ -154,11 +173,27 @@ export default {
   align-items: center;
   justify-content: center;
   width: 240px;
-  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.next-button {
+  width: 240px;
+  padding: 0.75em;
+  font-size: 1em;
+  font-family: inherit;
+  background: var(--lightOrange);
+  color: var(--dark);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.next-button:hover {
+  background: var(--orange);
 }
 
 .faded {
-  opacity: 0.3;
+  opacity: 0;
   filter: grayscale(100%);
 }
 
@@ -183,3 +218,5 @@ export default {
   z-index: 1;
 }
 </style>
+
+
