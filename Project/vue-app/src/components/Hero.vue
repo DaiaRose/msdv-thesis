@@ -20,7 +20,7 @@ export default { name: "Hero" };
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 1.5rem;
-  color: #fff;
+  color: var(--dark);
   box-sizing: border-box;
   position: relative;
 }
@@ -52,14 +52,15 @@ export default { name: "Hero" };
   font-family: "Red Hat Display", sans-serif;
   text-align: center;
   text-decoration: none;
-  color: #fff;
+  color: var(--dark);
   max-width: 50vw;
   word-break: break-word;
 }
 
 /* On hover: lighten the tagline */
 .tagline:hover {
-  color: #ddd;
+  background-color: var(--orange);
+  border-radius: 14px;
 }
 
 /* Mobile adjustments */
