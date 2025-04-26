@@ -62,6 +62,7 @@ export default {
   width: 240px;
   border: none;
   background: var(--lilac);
+  border-radius: var(--border-radius);
 }
 
 /* Remove the top padding Element UI gives the card body */

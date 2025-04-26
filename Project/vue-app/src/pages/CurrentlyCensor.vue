@@ -1,13 +1,13 @@
-<!-- src/pages/CurrentlyStatement.vue -->
+<!-- src/pages/CurrentlyCensor.vue -->
 <template>
-  <div class="currently-statement">
-    <p>
-      Currently, there are 9 states in which state law explicitly censors discussions 
-      of LGBTQ people or issues throughout all school curricula with 
+  <div class="page-wrapper">
+    <p class="currently-statement">
+      Currently, there are 9 states in which state law explicitly restricts discussions 
+      of LGBTQ people or issues throughout school curricula with 
       <router-link to="/CensorLaws" class="inline-button">“Don’t Say Gay”</router-link>
       laws affecting various grade levels. These laws, enacted between 
       spring of 2022 and Jan 8, 2025 represent a resurgence of anti-LGBTQ censorship 
-      that dates back to the late 1980s amid the HIV/AIDS crisis. 
+      that dates back to the late 1980s amid the AIDS crisis. 
       Those old style <router-link to="/CensorLaws" class="inline-button">“No Promo Homo”</router-link> laws are still on the books in 4 states. 
       In 
       <el-dropdown trigger="click" @command="handleCommand">
@@ -66,25 +66,34 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
+.page-wrapper {
+  overflow: hidden;
+  margin: 15px;
+}
+
 
 .currently-statement {
   color: var(--dark);
-  font-family: "Times New Roman";
-  font-size: 60px;
+  font-size: 4vw;
   font-style: normal;
   font-weight: 400;
-  line-height: 75px;
-  margin-left: 50px;
-  margin-right: 40px;
+  line-height: 1.2;
+  margin-left: 3vw;
+  margin-right: 2.5vw;
+  margin-top: 0vw;
+  margin-bottom: 0vw;
+  align-items: center;
+  position: relative;
 }
 
 .inline-button {
   display: inline-block;
   color: var(--dark);
-  padding: 0px 10px;
+  padding: 8px 10px 1px 10px;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: var(--border-radius);
   background: var(--lightOrange);
   cursor: pointer;
   line-height: 1;
@@ -96,28 +105,25 @@ export default {
 
 .el-dropdown-link {
   color: var(--dark);
-  font-family: "Times New Roman";
   vertical-align: baseline;
-  font-size: 60px;
+  font-size: 4vw;
   font-weight: 400;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   cursor: pointer;
   position: relative;
-  top: 6px;
 }
 
 .styled-box {
   display: inline-block;
   padding: 0 10px;
-  border-radius: 15px;
-  background:var(--lilac);
+  border-radius: var(--border-radius);
+  background: var(--lilac);
   cursor: pointer;
-  line-height: 1;
+  line-height: 1.3;
 }
 
 .number-box {
-  margin-left: 10px;
+  margin-left: 5px;
 }
-
 </style>
 

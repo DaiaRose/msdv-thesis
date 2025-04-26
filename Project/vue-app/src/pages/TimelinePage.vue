@@ -180,7 +180,7 @@ text-orientation: mixed;
 color: var(--dark);
 background: var(--lightOrange);
 border: none;
-border-radius: 4px;
+border-radius: var(--border-radius);
 cursor: pointer;
 padding: .5em;
 margin-left: 1em;
@@ -203,23 +203,6 @@ background: var(--orange);
 /* Hover for active buttons (optional slight darken) */
 .vertical-button.active:hover {
 filter: brightness(0.9);
-}
-
-.next-button {
-width: 240px;
-padding: 0.75em;
-font-size: 1.2rem;
-font-weight: 400;
-font-family: inherit;
-background: var(--lightOrange);
-color: var(--dark);
-border: none;
-border-radius: 14px;
-cursor: pointer;
-}
-
-.next-button:hover {
-background: var(--orange);
 }
 
 .horizontal-timeline {

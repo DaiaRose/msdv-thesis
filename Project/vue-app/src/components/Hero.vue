@@ -60,7 +60,7 @@ export default { name: "Hero" };
 /* On hover: lighten the tagline */
 .tagline:hover {
   background-color: var(--orange);
-  border-radius: 14px;
+  border-radius: var(--border-radius);
 }
 
 /* Mobile adjustments */

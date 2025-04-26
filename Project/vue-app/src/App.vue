@@ -26,6 +26,7 @@ export default {
   --dark: #131213;
   --orange: #F99368;
   --lightOrange: #FFC0A5;
+  --border-radius: 12px;
 }
 
 
@@ -38,6 +39,23 @@ body {
   font-size: 1.2rem;
   color: var(--dark);
   font-weight: 400;
+}
+
+.next-button {
+width: 240px;
+padding: 0.75em;
+font-size: 1.2rem;
+font-weight: 400;
+font-family: inherit;
+background: var(--lightOrange);
+color: var(--dark);
+border: none;
+border-radius: var(--border-radius);
+cursor: pointer;
+}
+
+.next-button:hover {
+background: var(--orange);
 }
 </style>
 

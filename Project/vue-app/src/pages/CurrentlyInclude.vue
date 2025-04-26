@@ -1,15 +1,13 @@
 <!-- src/pages/CurrentlyInclude.vue -->
 <template>
-    <div class="currently-statement">
-      <p>
+  <div class="page-wrapper">
+    <p class="currently-statement">
         Currently, 30 states and DC require sex education, either explicitly by law or via enforced state standards.
         Independently, 10 states have policies that include affirming sexual orientation instruction on LGBTQ identities
         or discussion of sexual health for LGBTQ youth. 4 states explicitly require instruction that discriminates against LGBTQ people.
-      </p>
-      <p>
         Student reports of their sex ed experience in
         <el-dropdown trigger="click" @command="handleCommand">
-            <span class="el-dropdown-link styled-box">
+          <span class="el-dropdown-link inline-button">
             {{ selectedOption }} <i class="el-icon-arrow-down"></i>
           </span>
           <template #dropdown>
@@ -31,10 +29,12 @@
         <span class="styled-box number-box">{{ increaseAmount }}%</span> from
         <span class="styled-box number-box">{{ value2017 }}%</span> in 2017 to
         <span class="styled-box number-box">{{ value2021 }}%</span> in 2021.
+      <button 
+      v-if="buttonShow"
+      class="next-button"
+      @click="goToNextPage"> What impact does inclusion have? 
+      </button>
     </p>
-    <div class="nextbutton-item">
-          <button @click="goToNextPage">Go to Next Page</button>
-        </div>
   </div>
 </template>
 
@@ -81,60 +81,24 @@ export default {
     goToNextPage() {
       this.$router.push({ name: 'impactPage' });
     }
+  },
+  computed: {
+  buttonShow() {
+    // Button shows if a real option has been selected
+    return this.selectedOption !== "__________";
   }
+}
+
 };
 </script>
 
 <style scoped>
+/* uses currentlyCensor styles*/
 
-.currently-statement {
-  color: var(--dark);
-  font-family: "Times New Roman";
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 75px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-.inline-button {
+.next-button {
   display: inline-block;
-  color: var(--dark);
-  padding: 0px 10px;
-  text-decoration: none;
-  border-radius: 15px;
-  background: var(--lightOrange);
-  cursor: pointer;
-  line-height: 1;
+  margin-top: 1rem; /* creates space after text */
+  margin-left: auto; /* push it to the right */
 }
 
-.inline-button:hover {
-  background: var(--orange);
-}
-
-.el-dropdown-link {
-  color: var(--dark);
-  font-family: "Times New Roman";
-  vertical-align: baseline;
-  font-size: 60px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  cursor: pointer;
-  position: relative;
-  top: 6px;
-}
-
-.styled-box {
-  display: inline-block;
-  padding: 0 10px;
-  border-radius: 15px;
-  background: var(--lilac);
-  cursor: pointer;
-  line-height: 1;
-}
-
-.number-box {
-  margin-left: 5px;
-}
 </style>
