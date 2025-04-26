@@ -1,27 +1,38 @@
 <!-- src/pages/TimelinePage.vue -->
 <template>
   <div class="horizontal-timeline">
-    <div class="scroll-container" @scroll="handleScroll">
-      <div
-        v-for="(card, idx) in timelineCards"
-        :key="card.id"
-        class="timeline-item"
-        :style="{
-          gridRow:    tagToRow[card.tag] + groupIndexList[idx],
-          gridColumn: dateToColumn[card.date]
-        }"
-      >
-        <TimelineCards
-          :data="card"
-          :progress="currentStep === idx ? currentProgress : 0"
-        />
-      </div>
+    <!-- Full-screen background on hover -->
+    <div
+      v-if="hoveredImage"
+      class="hover-background"
+      :style="{ backgroundImage: `url(${hoveredImage})` }"
+    ></div>
 
-      <!-- “Next Page” button sits in row 1 of the next column -->
+    <div class="scroll-container" @scroll="handleScroll">
+      <!-- One flex column per date -->
       <div
-        class="timeline-item button-item"
-        :style="{ gridRow: 1, gridColumn: timelineColumns + 1 }"
+        v-for="date in uniqueDates"
+        :key="date"
+        class="date-column"
       >
+        <!-- Cards for this date -->
+        <div
+          v-for="(card, idx) in cardsByDate[date]"
+          :key="card.id"
+          class="timeline-item"
+          :class="{ faded: hoveredCard && hoveredCard !== card.id }"
+          :style="{ marginTop: cardMarginTop(card) + 'px' }"
+          @mouseover="onHover(card.id, card.image)"
+          @mouseleave="onLeave"
+        >
+          <TimelineCards
+            :data="card"
+            :progress="currentStep === globalIndex(date, idx) ? currentProgress : 0"
+          />
+        </div>
+      </div>
+      <!-- Next Page button as last flex child -->
+      <div class="button-item" :class="{ faded: hoveredCard }">
         <button @click="goToNextPage">Go to Next Page</button>
       </div>
     </div>
@@ -32,119 +43,143 @@
 import TimelineCards from "../components/TimelineCards.vue";
 
 const MAX_SVG_WIDTH = 600;
+const TAG_ORDER = ["top", "mid", "low"];
+const LANE_SPACING = 120;
+const STACK_GAP = 10;
 
 export default {
   name: "TimelinePage",
   components: { TimelineCards },
   data() {
     return {
-      timelineCards: [],     // loaded from JSON
+      timelineCards: [],
       width: MAX_SVG_WIDTH,
       currentStep: 0,
       currentProgress: 0,
+      hoveredCard: null,
+      hoveredImage: ""
     };
   },
   computed: {
-    // 1) Unique tags in appearance order
-    uniqueTags() {
-      return Array.from(new Set(this.timelineCards.map(c => c.tag)));
-    },
-    // 2) Map tag → base row
-    tagToRow() {
-      return this.uniqueTags.reduce((m, tag, i) => {
-        m[tag] = i + 1;
-        return m;
-      }, {});
-    },
-    // 3) Unique dates in appearance order
     uniqueDates() {
       return Array.from(new Set(this.timelineCards.map(c => c.date)));
     },
-    // 4) Map date → column
-    dateToColumn() {
-      return this.uniqueDates.reduce((m, date, i) => {
-        m[date] = i + 1;
-        return m;
-      }, {});
-    },
-    // 5) Number of date‑columns (for placing the Next button)
-    timelineColumns() {
-      return this.uniqueDates.length;
-    },
-    // 6) For each card, index within its (date, tag) group
-    groupIndexList() {
-      const counters = {};
-      return this.timelineCards.map(card => {
-        const key = `${card.date}::${card.tag}`;
-        const idx = counters[key] || 0;
-        counters[key] = idx + 1;
-        return idx;
+    cardsByDate() {
+      const map = {};
+      this.uniqueDates.forEach(date => { map[date] = []; });
+      this.timelineCards.forEach(card => {
+        if (map[card.date]) map[card.date].push(card);
       });
-    },
+      return map;
+    }
   },
   methods: {
+    onHover(id, image) {
+      this.hoveredCard = id;
+      this.hoveredImage = `/images/timeline/${image}`;
+    },
+    onLeave() {
+      this.hoveredCard = null;
+      this.hoveredImage = "";
+    },
+    cardMarginTop(card) {
+      const lane = TAG_ORDER.indexOf(card.tag);
+      const base = lane >= 0 ? lane * LANE_SPACING : 0;
+      const group = this.cardsByDate[card.date].filter(c => c.tag === card.tag);
+      const stackIndex = group.findIndex(c => c.id === card.id);
+      return base + stackIndex * STACK_GAP;
+    },
+    globalIndex(date, idx) {
+      const card = this.cardsByDate[date][idx];
+      return this.timelineCards.findIndex(c => c.id === card.id);
+    },
     handleScroll(event) {
       const scrollLeft = event.target.scrollLeft;
-      const itemWidth  = 200 + 20; // card width + gap
-      this.currentStep    = Math.floor(scrollLeft / itemWidth);
+      const itemWidth = 240 + 20;
+      this.currentStep = Math.floor(scrollLeft / itemWidth);
       this.currentProgress = (scrollLeft % itemWidth) / itemWidth;
+    },
+    goToNextPage() {
+      this.$router.push({ name: 'CurrentlyStatement' });
+    },
+    fetchTimelineData() {
+      fetch('data/historyData.json')
+        .then(res => res.json())
+        .then(data => this.timelineCards = data)
+        .catch(err => console.error('Error fetching timeline data:', err));
     },
     onResize() {
       this.width = Math.min(MAX_SVG_WIDTH, window.innerWidth);
-    },
-    goToNextPage() {
-      this.$router.push({ name: "CurrentlyCensor" });
-    },
-    fetchTimelineData() {
-      fetch("data/historyData.json")
-        .then(res => res.json())
-        .then(data => { this.timelineCards = data; })
-        .catch(err => console.error("Error fetching timeline data:", err));
-    },
+    }
   },
   mounted() {
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('resize', this.onResize);
     this.fetchTimelineData();
   },
   beforeUnmount() {
-    window.removeEventListener("resize", this.onResize);
-  },
+    window.removeEventListener('resize', this.onResize);
+  }
 };
 </script>
 
 <style scoped>
 .horizontal-timeline {
   margin-top: 50px;
+  position: relative;
 }
 
 .scroll-container {
-  display: grid;
-  /* one 200px column per date */
-  grid-auto-flow: column;
-  grid-auto-columns: 200px;
-  /* each row sizes to its content */
-  grid-auto-rows: auto;
-  /* gaps */
-  column-gap: 20px;
-  row-gap: 10px;
-
+  display: flex;
   overflow-x: auto;
-  overflow-y: hidden;
-  padding: 0;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  gap: 20px;
+}
 
-  /* Enable scroll snapping */
-  scroll-snap-type: x mandatory;
+.date-column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 240px;
 }
 
 .timeline-item {
-  width: 200px;            /* match card width */
-  scroll-snap-align: start;
+  width: 240px;
+  transition: opacity 0.2s ease, filter 0.2s ease;
 }
 
 .button-item {
-  width: 200px;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 240px;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.faded {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+/* Full-screen hover background */
+.hover-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Ensure cards render above background */
+.scroll-container,
+.timeline-item,
+.button-item {
+  position: relative;
+  z-index: 1;
 }
 </style>

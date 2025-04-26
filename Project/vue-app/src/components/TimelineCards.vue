@@ -4,11 +4,26 @@
       <h2 class="date">{{ data.date }}</h2>
       <p class="description">{{ data.description }}</p>
 
-      <!-- Only render if there's an image URL -->
+      <!-- If a link is provided, wrap the image in an anchor tag -->
+      <a
+        v-if="data.link"
+        :href="data.link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          v-if="data.image"
+          :src="imageUrl"
+          :alt="data.altText"
+          class="card-image clickable"
+        />
+      </a>
+      <!-- Otherwise render the image normally -->
       <img
-        v-if="data.image"
+        v-else-if="data.image"
         :src="imageUrl"
         :alt="data.altText"
+        class="card-image"
       />
     </div>
   </el-card>
@@ -29,19 +44,18 @@ export default {
   },
   computed: {
     imageUrl() {
-      // if data.image is empty, this will be an empty string
       return this.data.image
-        ? `images/timeline/${this.data.image}`
+        ? `/images/timeline/${this.data.image}`
         : "";
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .card {
   margin: 0 auto;
-  width: 200px;
+  width: 240px;
   border: none;
   background: var(--lilac);
 }
@@ -49,29 +63,37 @@ export default {
 /* Remove the top padding Element UI gives the card body */
 .card ::v-deep .el-card__body {
   padding-top: 0.5em;
-  /* keep some bottom padding if you like */
   padding-bottom: 0.5em;
 }
 
 /* Kill the default top margin on your <h2 class="date"> */
 .card .date {
-  margin: 0 0 0.25em; /* top 0, bottom small */
-  font-size: 1em; 
+  margin: 0 0 0.25em;
+  font-size: 1em;
 }
 
-/* If you need, reset any <p> margins too */
+/* Reset paragraph margins */
 .card .description {
   margin: 0;
 }
 
-/* Your existing image rules */
-.card img {
+/* Base image styling */
+.card-image {
   display: block;
   max-width: 100%;
   height: auto;
   margin-top: 0.5em;
   object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Only clickable images enlarge on hover */
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  transform: scale(1.1);
 }
 </style>
-
 
