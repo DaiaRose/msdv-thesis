@@ -34,7 +34,6 @@ export default {
       type: Number,
       default: 20
     },
-    // Arrays of filenames from the manifest for each layer
     headImagePaths: {
       type: Array,
       required: true
@@ -50,36 +49,39 @@ export default {
       randomFaceImages: []
     };
   },
-  created() {
-    this.generateUniqueImages();
-  },
   watch: {
-  headImagePaths() {
-    this.generateUniqueImages();
-  },
-  faceImagePaths() {
-    this.generateUniqueImages();
-  },
-  headManifestKey() {
-    this.generateUniqueImages();
-  },
-  faceManifestKey() {
-    this.generateUniqueImages();
-  },
-  filledCount(newVal, oldVal) {
-    if (newVal > oldVal) {
-      this.generateUniqueImages(); // regenerate when count increases
+    headImagePaths: {
+      immediate: true,
+      handler() {
+        this.checkAndGenerate();
+      }
+    },
+    faceImagePaths: {
+      immediate: true,
+      handler() {
+        this.checkAndGenerate();
+      }
+    },
+    filledCount(newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.checkAndGenerate();
+      }
     }
-  }
   },
   methods: {
+    checkAndGenerate() {
+      if (
+        this.headImagePaths && this.headImagePaths.length &&
+        this.faceImagePaths && this.faceImagePaths.length
+      ) {
+        this.generateUniqueImages();
+      }
+    },
     generateUniqueImages() {
-      if (!this.headImagePaths.length || !this.faceImagePaths.length) return;
       this.randomHeadImages = this.generateLayerImages(this.headImagePaths, 'images/peeps/');
       this.randomFaceImages = this.generateLayerImages(this.faceImagePaths, 'images/face/');
     },
     generateLayerImages(pathsArray, folderPath) {
-      // Prepend the folder path to each filename.
       const fullPaths = pathsArray.map(filename => `${folderPath}${filename}`);
       this.shuffleArray(fullPaths);
       const selected = [];
@@ -98,34 +100,32 @@ export default {
       console.error('Image failed to load:', src);
     },
     changeFace(index) {
-      // On mouseenter, pick a new random face image for this cell.
       const folderPath = 'images/face/';
-      // Create an array of full paths from the faceImagePaths prop.
       const availableFaces = this.faceImagePaths.map(filename => `${folderPath}${filename}`);
-      // Choose a new random face.
       const newFace = availableFaces[Math.floor(Math.random() * availableFaces.length)];
-      // Replace the face at this index.
-      // Using Vue.set (or this.$set) to ensure reactivity.
       this.randomFaceImages[index] = newFace;
     }
   }
 };
 </script>
 
+
 <style scoped>
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: 7px;
-  width: fit-content;
-  margin-top: 60px;
+  gap: clamp(0.5vw, 1vw, 20px); /* fluid spacing depending on screen size */
+  width: 100%;                  /* allow grids to stretch across */
+  max-width: 240px;              /* limit individual grid width */
+  margin: 0 auto;
 }
 
 .square {
-  width: 40px;
-  height: 40px;
+  width: 100%;          /* fill its grid cell */
+  aspect-ratio: 1 / 1;  /* always be a perfect square */
   position: relative;
+  overflow: visible;
 }
 
 /* The layer-wrapper positions the two layers together. */
@@ -133,6 +133,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: visible;
 }
 
 /* Base styling for images */
@@ -161,7 +162,7 @@ export default {
   height: auto;
   top: 60%;
   left: 55%;
-  transform: translate(-50%, -50%);
+  transform: translate(-40%, -50%);
   object-fit: contain;
   z-index: 2;
 }

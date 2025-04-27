@@ -2,11 +2,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import TimelinePage from '../pages/TimelinePage.vue'
-import CurrentlyCensor from '../pages/CurrentlyCensor.vue'  // New page
-import CensorLaws from '../pages/CensorLaws.vue'  // New page
-import FaceGridPage from '../pages/FaceGridPage.vue'  // New page
-import impactPage from '../pages/impactPage.vue'  // New page
-import CurrentlyInclude from '../pages/CurrentlyInclude.vue'  // New page
+import CurrentlyCensor from '../pages/CurrentlyCensor.vue' 
+import CensorLaws from '../pages/CensorLaws.vue'  
+import FaceGridIntroPage from '../pages/FaceGridIntroPage.vue'
+import FaceGridStatsPage from '../pages/FaceGridStatsPage.vue'  
+import impactPage from '../pages/impactPage.vue'  
+import CurrentlyInclude from '../pages/CurrentlyInclude.vue'
 
 const routes = [
   {
@@ -32,11 +33,16 @@ const routes = [
     component: CensorLaws,
     meta: { transition: 'scroll-down' }
   },
+  {
+    path: '/FaceGridIntroPage',
+    name: 'FaceGridIntroPage',
+    component: FaceGridIntroPage,
+  },
 
   {
-    path: '/FaceGridPage',
-    name: 'FaceGridPage',
-    component: FaceGridPage,
+    path: '/FaceGridStatsPage',
+    name: 'FaceGridStatsPage',
+    component: FaceGridStatsPage,
   },
   {
     path: '/CurrentlyInclude',

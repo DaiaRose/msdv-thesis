@@ -151,16 +151,20 @@ export default {
       this.dialogVisible = true;
     },
     goToNextPage() {
-      this.$router.push({ name: 'FaceGridPage' });
+      this.$router.push({ name: 'FaceGridIntroPage' });
     }
   }
 };
 </script>
-<style scoped>
+
+<style>
 .page-header {
   padding: 1.5rem 1rem;
 }
+</style>
 
+
+<style scoped>
 /* Layout */
 .censor-laws {
   position: relative;
