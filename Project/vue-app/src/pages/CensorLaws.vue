@@ -1,9 +1,12 @@
 <!-- src/pages/CensorLaws.vue -->
 <template>
     <div class="censor-laws">
+      <header class="page-header">
+      <p class="currently-statement">Still on the books.</p>
+    </header>
     <!-- Navigation button timeline item -->
     <button class="next-button" @click="goToNextPage">
-      What's happening now?
+      Why does this matter?
     </button>
 
     <!-- Timeline Section -->
@@ -35,6 +38,7 @@
         v-model="dialogVisible"
         :title="dialogTitle"
         width="50%"
+        top="20vh" 
         :close-on-click-modal="true"
         custom-class="law-quote-dialog"
         :show-close="false"
@@ -122,9 +126,9 @@ export default {
         2025: { showLabel: true, states: [{ abbr: "OH", tooltip: "Ohio details", title: "Ohio – Bill Name" }] }
       },
       // Dialog state
-      dialogVisible: false,
-      dialogContent: "",
-      dialogTitle: "Details"
+      dialogVisible: true,
+      dialogTitle: "Click a state for quotes.",
+      dialogContent: "Notice how the language for recent laws differs by adding reference to pronouns, gender identity, and in 2025, gender ideology.",
     };
   },
   computed: {
@@ -153,6 +157,10 @@ export default {
 };
 </script>
 <style scoped>
+.page-header {
+  padding: 1.5rem 1rem;
+}
+
 /* Layout */
 .censor-laws {
   position: relative;
@@ -203,7 +211,7 @@ export default {
 }
 .year {
   position: absolute;
-  bottom: -20px;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%) rotate(-90deg);
   font-size: 20px;
@@ -223,8 +231,8 @@ export default {
 }
 .state-abbr {
   padding: 0 8px;
-  margin: 0.25rem 0;
   font-size: 1.2rem;
+  line-height: 2rem;
   font-weight: 600;
   color: var(--dark);
   background-color: var(--lightOrange);

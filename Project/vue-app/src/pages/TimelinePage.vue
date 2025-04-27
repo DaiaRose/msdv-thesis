@@ -2,7 +2,7 @@
 <template>
   <div class="horizontal-timeline">
     <!-- Label cards on left, matching next-button style for structure but vertical text orientation -->
-    <div class="label-container" v-if="!hoveredCard">
+    <div class="label-container" :class="{ faded: hoveredCard }">
   <button
     class="vertical-button"
     :class="{ active: selectedTags.includes('top') }"
@@ -44,10 +44,11 @@
     <div v-for="(card, idx) in cardsByDate[date]"
       :key="card.id"
       class="timeline-item"
-      :class="{ 
-        faded: hoveredCard && hoveredCard !== card.id, 
-        'inactive-tag': selectedTags.length > 0 
-        && !card.tags.some(t => selectedTags.includes(t))}"
+      :class="{
+        hovered:   hoveredCard === card.id,
+        faded:     hoveredCard && hoveredCard !== card.id,
+        'inactive-tag': selectedTags.length > 0 && !card.tags.some(t => selectedTags.includes(t))
+      }"
       :style="{ marginTop: cardMarginTop(card) + 'px' }"
     >
       <TimelineCards
@@ -81,15 +82,15 @@ export default {
 name: "TimelinePage",
 components: { TimelineCards },
 data() {
-return {
-  timelineCards: [],
-  width: MAX_SVG_WIDTH,
-  currentStep: 0,
-  currentProgress: 0,
-  hoveredCard: null,
-  hoveredImage: "",
-  selectedTags: [ 'top', 'mid', 'low' ]
-};
+  return {
+    timelineCards: [],
+    width: MAX_SVG_WIDTH,
+    currentStep: 0,
+    currentProgress: 0,
+    hoveredCard: null,
+    hoveredImage: "",
+    selectedTags: [ 'top', 'mid', 'low' ]
+  };
 },
 computed: {
 uniqueDates() {
@@ -170,108 +171,118 @@ window.removeEventListener('resize', this.onResize);
 
 <style scoped>
 .inactive-tag {
-opacity: 0.3;
-filter: grayscale(100%);
+  opacity: 0.4;
+  filter: grayscale(100%);
 }
 
 .vertical-button {
-writing-mode: vertical-rl;
-text-orientation: mixed;
-color: var(--dark);
-background: var(--lightOrange);
-border: none;
-border-radius: var(--border-radius);
-cursor: pointer;
-padding: .5em;
-margin-left: 1em;
-margin-top: 1em;
-margin-bottom: 7rem;
-font-size: 1.2rem;
-font-weight: 400;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: var(--dark);
+  background: var(--lightOrange);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  padding: .5em;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 7rem;
+  font-size: 1.2rem;
+  font-weight: 400;   
 }
 
 /* Active state */
 .vertical-button.active {
-background: var(--orange);
+  background: var(--orange);
 }
 
 /* Hover for inactive buttons */
 .vertical-button:not(.active):hover {
-background: var(--orange);
+  background: var(--orange);
 }
 
 /* Hover for active buttons (optional slight darken) */
 .vertical-button.active:hover {
-filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 
 .horizontal-timeline {
-display: flex;
-align-items: flex-start;
-margin-top: 50px;
-position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 50px;
+  position: relative;
+  z-index: auto;
 }
 
 .label-container {
-display: flex;
-flex-direction: column;
-gap: 20px;
-margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-right: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.label-container.faded {
+  opacity: 0;
+  pointer-events: none;   /* let your mouse go “through” it */
 }
 
 .scroll-container {
-display: flex;
-overflow-x: auto;
--webkit-overflow-scrolling: touch;
-padding: 20px;
-gap: 20px;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  gap: 20px;
+  position: relative;
+  z-index: auto;
 }
 
 .date-column {
-display: flex;
-flex-direction: column;
-position: relative;
-width: 240px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 240px;
 }
 
 .timeline-item {
-width: 240px;
-transition: opacity .2s ease, filter 0.2s ease;
+  position: relative;
+  width: 240px;
+  transition: opacity .2s ease, filter 0.2s ease;
+  z-index: 0;
+}
+
+.timeline-item.hovered {
+  position: relative;
+  z-index: 2;   /* above the label-container which is at z-index:1 */
 }
 
 .button-item {
-flex: 0 0 auto;
-display: flex;
-align-items: center;
-justify-content: center;
-width: 240px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
 }
 
 .faded {
-opacity: 0;
-filter: grayscale(100%);
+  opacity: 0;
+  filter: grayscale(100%);
 }
 
 /* Full-screen hover background */
 .hover-background {
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-size: contain;
-background-position: center;
-background-repeat: no-repeat;
-z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
-/* Ensure cards render above background */
-.scroll-container,
-.timeline-item,
-.button-item {
-position: relative;
-z-index: 1;
-}
 </style>
 
 
