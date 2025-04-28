@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     fetchManifest() {
-      fetch('/data/manifestPeeps.json')
+      fetch('data/manifestPeeps.json')
         .then(r => r.json())
         .then(data => { this.manifest = data; })
         .catch(console.error);
@@ -84,23 +84,28 @@ export default {
 
 .fixed-grid-container {
   position: fixed;
-  top: 60px;    /* below the header */
-  bottom: 80px; /* above the button or footer */
+  top: 100px; /* Leave room for your header */
+  bottom: 80px;
   left: 0;
   right: 0;
-  
   display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;     /* center vertically */
-  z-index: 50;
+  align-items: center;  /* vertically center */
+  justify-content: center; /* horizontally center */
+  overflow-y: auto;
 }
 
+/* Layout for multiple FaceGrid components */
 .face-grids-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  flex-wrap: nowrap; 
   justify-content: center;
   align-items: center;
+  gap: clamp(10px, 3vw, 40px); /* smart expanding gaps */
+  padding-top: 2vw;
+  padding-left: 1vw;
+  overflow-x: auto;    /* scroll sideways if absolutely necessary (but should rarely happen) */
+  max-width: 95vw;
+  margin: 0 auto;
 }
 
 .next-button {

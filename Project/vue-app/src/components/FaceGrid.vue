@@ -102,7 +102,14 @@ export default {
     changeFace(index) {
       const folderPath = 'images/face/';
       const availableFaces = this.faceImagePaths.map(filename => `${folderPath}${filename}`);
-      const newFace = availableFaces[Math.floor(Math.random() * availableFaces.length)];
+
+      if (!availableFaces.length) return;
+
+      let newFace;
+      do {
+        newFace = availableFaces[Math.floor(Math.random() * availableFaces.length)];
+      } while (newFace === this.randomFaceImages[index] && availableFaces.length > 1);
+
       this.randomFaceImages[index] = newFace;
     }
   }

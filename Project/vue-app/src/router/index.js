@@ -9,6 +9,7 @@ import FaceGridStatsPage from '../pages/FaceGridStatsPage.vue'
 import impactPage from '../pages/impactPage.vue'  
 import CurrentlyInclude from '../pages/CurrentlyInclude.vue'
 
+
 const routes = [
   {
     path: '/',
