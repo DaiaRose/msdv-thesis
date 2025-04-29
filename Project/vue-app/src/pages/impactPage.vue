@@ -1,7 +1,7 @@
 <template>
   <div class="impact-page">
     <p class="currently-statement">
-      Increasing LGBTQ-Inclusive Sex Ed is associated with fewer reports of
+      Increasing the percentage of schools with LGBTQ-Inclusive Sex Ed is associated with fewer reports of
       <el-dropdown trigger="click" @command="handleCommand">
         <span class="el-dropdown-link styled-box">
           {{ dropdownLabelMap[selectedOption] }} <i class="el-icon-arrow-down"></i>
