@@ -4,12 +4,16 @@
       Increasing LGBTQ-Inclusive Sex Ed is associated with fewer reports of
       <el-dropdown trigger="click" @command="handleCommand">
         <span class="el-dropdown-link styled-box">
-          {{ selectedOption }} <i class="el-icon-arrow-down"></i>
+          {{ dropdownLabelMap[selectedOption] }} <i class="el-icon-arrow-down"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-item command="bullying">Bullying</el-dropdown-item>
-          <el-dropdown-item command="depression">Depressive Symptoms</el-dropdown-item>
-          <el-dropdown-item command="suicide">Suicide Plans</el-dropdown-item>
+          <el-dropdown-item
+            v-for="(label, key) in dropdownLabelMap"
+            :key="key"
+            :command="key"
+          >
+            {{ label }}
+          </el-dropdown-item>
         </template>
       </el-dropdown>
       among <span class="styled-box group-box">{{ affectedGroup }}</span>
@@ -21,6 +25,7 @@
   </div>
 </template>
 
+
 <script>
 import ImpactFaces from "@/components/ImpactFaces.vue";
 
@@ -28,6 +33,11 @@ export default {
   components: { ImpactFaces },
   data() {
     return {
+      dropdownLabelMap: {
+        bullying: "Bullying",
+        depression: "Depressive Symptoms",
+        suicide: "Suicide Plans"
+      },
       selectedOption: "bullying",
       affectedGroup: "gay and lesbian youth.",
       allGroups: {
