@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "date": "1910s and earlier-",
-    "description": "Hygiene education in the United States focused primarily on cleanliness, immorality, and sexually transmitted diseases. ",
+    "date": "1910s and earlier",
+    "description": "Hygiene education in the United States focused primarily on cleanliness, immorality, and sexually transmitted diseases.",
     "tags": ["top"],
     "image": "hygieneEd.png",
     "altText": "",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "date": "1913",
-    "description": "Ella Flagg Young, the superintendent of Chicago Public Schools was the first to attempt implementing a city-wide sex-hygiene program in secondary schools",
+    "description": "Ella Flagg Young, the superintendent of Chicago Public Schools was the first to attempt implementing a city-wide sex-hygiene program in secondary schools.",
     "tags": ["top"],
     "image": "Ella.png",
     "altText": "portrait of Ella Flagg Young",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "date": "1917",
-    "description": "Fight against venereal disease as matter of national security",
+    "description": "Fighting against venereal disease was a matter of national security.",
     "tags": ["top","mid"],
     "image": "disease.png",
     "altText": "",
@@ -29,28 +29,37 @@
   {
     "id": 4,
     "date": "1917",
-    "description": "US engaged in World War 1",
+    "description": "US joins World War 1",
     "tags": ["mid"]
   },
   {
     "id": 5,
     "date": "1919",
-    "description": "The U.S. Department of Labor’s Children’s Bureau releases a report suggesting sex education during school could have better protected soldiers from STIs.",
+    "description": "The U.S. Department of Labor's Children's Bureau released a report suggesting sex education during school could have better protected soldiers from STIs.",
     "tags": ["top"],
     "image": "defeated.png",
     "altText": "",
     "link":"https://fraser.stlouisfed.org/title/standards-child-welfare-8348?page=264"
   },
   {
+    "id": 6,
+    "date": "1920-1940",
+    "description": "Education on development reached it's greatest popularity.",
+    "tags": ["top"],
+    "image": "whatSexBrings.png",
+    "altText": "",
+    "link":"https://gallery.lib.umn.edu/exhibits/show/youth_and_life/posters"
+  },
+  {
     "id": 7,
-    "date": "",
-    "description": "The Great Depression and then US joins WW2",
+    "date": "1929 - 1945",
+    "description": "The Great Depression and then US joined WW2",
     "tags": ["mid"]
   },
   {
     "id": 8,
     "date": "1940s-50s",
-    "description": "Marriage courses start to appear in colleges which address human sexuality among other practical matters",
+    "description": "Marriage courses started to appear in colleges and address human sexuality among other practical matters.",
     "tags": ["top"],
     "image": "marriageCourse.png",
     "altText": "",
@@ -59,7 +68,7 @@
   {
     "id": 9,
     "date": "1948",
-    "description": "Kinsey Report challenges norms (establishes sex research as a field and sparks debate by showing how many people do taboo things)",
+    "description": "The Kinsey Report challenged norms by establishing sex research as a field and sparking discourse on the variety and frequency of sexual behavior.",
     "tags": ["mid"],
     "image": "kinsey.png",
     "altText": "",
@@ -67,8 +76,8 @@
   },
   {
     "id": 10,
-    "date": "1950",
-    "description": "Homophile movement growing",
+    "date": "1950s",
+    "description": "Pioneering homophile groups were formed to provide unity, awareness, and address discrimination.",
     "tags": ["low"],
     "image": "homophile.png",
     "altText": "",
@@ -83,7 +92,7 @@
   {
     "id": 12,
     "date": "1953",
-    "description": "lavender scare",
+    "description": "Mass dissmal of homosexual employees from the federal government, known as the Lavender Scare.",
     "tags": ["mid","low"],
     "image": "lavender.png",
     "altText": "",
@@ -92,7 +101,7 @@
   {
     "id": 13,
     "date": "1964",
-    "description": "Sexuality Information and Education Council of the US (SIECUS) is founded.",
+    "description": "Sexuality Information and Education Council of the US (SIECUS) was founded by Mary Calderone.",
     "tags": ["top","mid"],
     "image": "calderone.png",
     "altText": "",
@@ -101,25 +110,16 @@
   {
     "id": 14,
     "date": "1964",
-    "description": "Civil Rights Act (Title VII prohibits employment discrimination based on sex)",
+    "description": "The Civil Rights Act of 1964 outlawed public segregation and employment discrmination including on the basis of race, color, religion, sex, national origin, disability, and age.",
     "tags": ["mid"],
     "image": "civilRights.png",
     "altText": "",
     "link":"https://www.hrdive.com/news/celebrating-60-years-of-title-vii-of-the-civil-rights-act/720381/"
   },
   {
-    "id": 15,
-    "date": "1965",
-    "description": "Griswold v. Connecticut legalizes birth control for married couples",
-    "tags": ["mid"],
-    "image": "griswold.png",
-    "altText": "",
-    "link":"https://www.smithsonianmag.com/smithsonian-institution/the-revolutionary-1965-supreme-court-decision-that-declared-sex-was-a-private-affair-180980089/"
-  },
-  {
     "id": 16,
     "date": "1969",
-    "description": "Stonewall uprising",
+    "description": "Police raids at a gay bar called Stonewall Inn in NYC sparked riots and protests that are considered the beginning of the modern pride movement.",
     "tags": ["low"],
     "image": "stonewall.png",
     "altText": "",
@@ -128,7 +128,7 @@
   {
     "id": 17,
     "date": "1970",
-    "description": "Our Bodies, Ourselves published",
+    "description": "The first edition of Our Bodies, Ourselves booklet was published to encourgae woman to have a say in their own health care and sexuality.",
     "tags": ["top"],
     "image": "ourBodies.png",
     "altText": "",
@@ -137,7 +137,7 @@
   {
     "id": 18,
     "date": "1972",
-    "description": "Title IX passed",
+    "description": "Title IX passed stating: “No person in the United States shall, on the basis of sex, be excluded from participation in, be denied the benefits of, or be subjected to discrimination under any education program or activity receiving Federal financial assistance.”",
     "tags": ["mid"],
     "image": "1972Mink.png",
     "altText": "",
@@ -146,7 +146,7 @@
   {
     "id": 19,
     "date": "1973",
-    "description": "roe v wade",
+    "description": "The Supreme Court case Roe v. Wade established a constitutional right to abortion in the US.",
     "tags": ["mid"],
     "image": "JaneRoe.png",
     "altText": "",
@@ -155,7 +155,7 @@
   {
     "id": 20,
     "date": "1973",
-    "description": "Homosexuality declassified as disorder",
+    "description": "Homosexuality was declassified as disorder by the American Psychiatric Association.",
     "tags": ["low"],
     "image": "declassified.png",
     "altText": "",
@@ -164,7 +164,7 @@
   {
     "id": 21,
     "date": "1977",
-    "description": "Anita Bryant’s anti-gay campaign Save Our Children campaign",
+    "description": "Anita Bryant's anti-gay “Save Our Children“ campaign organized opposition to the movement for lesbian and gay rights.",
     "tags": ["low"],
     "image": "anita.png",
     "altText": "",
@@ -173,7 +173,7 @@
   {
     "id": 26,
     "date": "1981",
-    "description": "Abstinence-only funding begins federally.",
+    "description": "Abstinence-only until marriage funding began federally with the Adolescent Family Life Act.",
     "tags": ["top","mid"],
     "image": "DentonHatch.png",
     "altText": "",
@@ -182,34 +182,35 @@
   {
     "id": 22,
     "date": "1981",
-    "description": "The global pandemic of HIV/AIDS begins, it is an ongoing worldwide public health issue.",
+    "description": "The global pandemic of HIV/AIDS began in 1981, and continues to be a public health issue with sexual contact as a primary mode of transmission.",
     "tags": ["top","mid","low"],
     "image": "AIDSpatient.png",
     "altText": "",
     "link":"https://www.ucsf.edu/news/2021/06/420686/40-years-aids-timeline-epidemic"
   },
   {
-    "id": 24,
-    "date": "1990s",
-    "description": "Most states mandate AIDS education. Cultural messaging and school-based curricula shift toward risk reduction (not abstinence-only, but not fully comprehensive either)",
-    "tags": ["top","mid"],
-    "image": "safeSex.png",
-    "altText": "",
-    "link":"https://www.rochester.edu/newscenter/8000-posters-one-collection-202502/"
-  },
-  {
-    "id": 25,
-    "date": "1990",
-    "description": "ACT UP protests",
+    "id": 23,
+    "date": "1980s",
+    "description": "ACT UP protests led by the AIDS Coalition to Unleash Power, a grassroots organization, demand access to treatments and research funding to end the AIDS crisis.",
     "tags": ["low"],
     "image": "aidsProtest.png",
     "altText": "",
     "link":"https://www.theguardian.com/society/2023/oct/11/act-up-hiv-aids-1988-fda-protest"
   },
   {
+    "id": 24,
+    "date": "1990s",
+    "description": "Most states mandate AIDS education. Cultural messaging and school-based curricula shift toward risk reduction.",
+    "tags": ["top","mid"],
+    "image": "safeSex.png",
+    "altText": "",
+    "link":"https://www.rochester.edu/newscenter/8000-posters-one-collection-202502/"
+  },
+
+  {
     "id": 27,
     "date": "1996",
-    "description": "Defense of Marriage Act (DOMA)",
+    "description": "The Defense of Marriage Act restricts federal marriage benefits to heterosexual couples.",
     "tags": ["mid"],
     "image": "DOMA.png",
     "altText": "",
@@ -218,7 +219,7 @@
   {
     "id": 28,
     "date": "2000",
-    "description": "U.S. Surgeon General calls for comprehensive sex ed",
+    "description": "U.S. Surgeon General David Satcher calls for comprehensive sex education.",
     "tags": ["top"],
     "image": "surgeon.png",
     "altText": "",
@@ -227,7 +228,7 @@
   {
     "id": 29,
     "date": "2003",
-    "description": "Lawrence v. Texas sodomy laws struck",
+    "description": "The Supreme Court case Lawrence v. Texas invalidated sodomy laws across the US and recognized a fundamental right to engage in private, consensual sexual conduct between adults.",
     "tags": ["mid","low"],
     "image": "sodomyLaw.png",
     "altText": "",
@@ -236,7 +237,7 @@
   {
     "id": 30,
     "date": "2004",
-    "description": "First same-sex marriage in Massachusetts.",
+    "description": "Tanya McCloskey and Marcia Kadish were the first same-sex couple to get legally married in the US in Cambridge, Massachusetts.",
     "tags": ["low"],
     "image": "MAmarriage.png",
     "altText": "",
@@ -245,25 +246,16 @@
   {
     "id": 32,
     "date": "2010",
-    "description": "Asexual visibility rises — AVEN (Asexual Visibility & Education Network) gains traction, communities create 'Ace Week' and push for inclusion in queer spaces and sex ed",
+    "description": "Asexual visibility rose with AVEN (Asexual Visibility & Education Network) gaining traction. Advocates created 'Ace Week' and push for inclusion in queer spaces and sex ed.",
     "tags": ["low"],
     "image": "aceWeek.png",
     "altText": "",
     "link":"https://aceweek.org/stories/the-history-of-ace-week"
   },
   {
-    "id": 33,
-    "date": "2013",
-    "description": "M.C. v. Aaronson: First U.S. lawsuit over non-consensual surgery on an intersex child (South Carolina). Case draws national attention to intersex rights.",
-    "tags": ["mid"],
-    "image": "crawford.png",
-    "altText": "",
-    "link":"https://interaction.org.au/22464/groundbreaking-us-law-suit/"
-  },
-  {
     "id": 34,
     "date": "2014",
-    "description": "Trans visibility rises nationally",
+    "description": "Transgender visibility rises nationally with increasing media attention and policy shifts.",
     "tags": ["mid","low"],
     "image": "transgenderCover.png",
     "altText": "",
@@ -272,7 +264,7 @@
   {
     "id": 35,
     "date": "2015",
-    "description": "Obergefell overturned Baker and requires states to issue marriage licenses to same-sex couples and to recognize same-sex marriages.",
+    "description": "The Supreme Court case Obergefell v. Hodges overruled a prior decision in Baker v. Nelson and required states to issue marriage licenses to same-sex couples and recognize same-sex marriages.",
     "tags": ["mid"],
     "image": "marriage.png",
     "altText": "celebration with a couple kissing in front of white house",
@@ -281,7 +273,7 @@
   {
     "id": 36,
     "date": "2016",
-    "description": "CA first state to mandate that LGBTQ+ content be included in sex ed",
+    "description": "California was the first US state to mandate inclusive comprehensive sex ed as part of the California Healthy Youth Act. It required affirmative recognition of different sexual orientations and gender identities.",
     "tags": ["top"],
     "image": "ParentProtest.png",
     "altText": "",
@@ -290,7 +282,7 @@
   {
     "id": 37,
     "date": "2016",
-    "description": "Obama-era Title IX guidance clarifies protections for trans students — includes access to bathrooms and pronouns in schools",
+    "description": "Obama-era Title IX guidance clarified protections for trans students — including access to bathrooms in schools.",
     "tags": ["mid","low"],
     "image": "neutralBathroom.png",
     "altText": "",
@@ -299,7 +291,7 @@
   {
     "id": 38,
     "date": "2017",
-    "description": "Trump rescinds Title IX guidance protecting trans students returning decisions to states.",
+    "description": "Trump rescinded guidance that Title IX applied to discrimination based on gender identity, removing protections for trans youth. This fluctuation of protections continues with recent Biden and Trump administrations.",
     "tags": ["mid","low"],
     "image": "protectTransKids.png",
     "altText": "",
@@ -308,7 +300,7 @@
   {
     "id": 39,
     "date": "2018",
-    "description": "U.N. and WHO release updated guidelines supporting comprehensive sexuality education, globally endorsed (not adopted by US)",
+    "description": "U.N. and WHO released updated guidelines supporting comprehensive sexuality education, which are internationally endorsed but not adopted by the US.",
     "tags": ["mid"],
     "image": "cseZambia.png",
     "altText": "",
@@ -317,13 +309,13 @@
   {
     "id": 40,
     "date": "2019",
-    "description": "COVID-19 pandemic",
+    "description": "COVID-19 pandemic begins",
     "tags": ["mid"]
   },
   {
     "id": 41,
     "date": "2020",
-    "description": "SCOTUS: Civil Rights Act covers LGBTQ+",
+    "description": "The Supreme Court rules in a collection of cases called Bostock v. Clayton County that the Civil Rights Act of 1964 extends to discrimination based on sexual orientation and gender identity.",
     "tags": ["mid","low"],
     "image": "SCOTUS.png",
     "altText": "",
@@ -332,7 +324,7 @@
   {
     "id": 43,
     "date": "2022",
-    "description": "Polarization over sex ed, race, and LGBTQ+ issues in schools intensifies including “Don’t Say Gay” laws",
+    "description": "Polarization over sex ed, race, and LGBTQ+ issues in schools intensifies including “Don't Say Gay” laws and societal debates about curriculum content.",
     "tags": ["top","mid","low"],
     "image": "gayFlorida.png",
     "altText": "",
@@ -341,7 +333,7 @@
   {
     "id": 42,
     "date": "2022",
-    "description": "Roe v Wade is overturned",
+    "description": "The Supreme Court case Dobbs v. Jackson Women's Health Organization overturned the federal right to abortion that Roe v. Wade had established.",
     "tags": ["mid"],
     "image": "byeRoe.png",
     "altText": "",
