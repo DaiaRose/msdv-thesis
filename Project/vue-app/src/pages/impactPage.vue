@@ -114,8 +114,10 @@ export default {
 }
 
 .currently-statement {
+  font-family: "Red Hat Display", sans-serif;
   color: var(--dark);
   font-size: 4vw;
+  font-weight: 400;
   line-height: 1.2;
   overflow: visible;
   position: relative;

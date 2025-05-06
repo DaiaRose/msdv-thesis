@@ -73,7 +73,6 @@ export default {
   margin: 15px;
 }
 
-
 .currently-statement {
   color: var(--dark);
   font-size: 4vw;
