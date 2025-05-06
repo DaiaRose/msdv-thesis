@@ -28,6 +28,7 @@
     <div class="fixed-grid-container">
       <ImpactFaces :groups="currentGroups" />
     </div>
+    <button class="invisible-home-button" @click="goHome"></button>
   </div>
 </template>
 
@@ -70,6 +71,9 @@ export default {
     }
   },
   methods: {
+    goHome() {
+    this.$router.push({ name: 'Home' }); // Ensure your router has this route name
+    },
     handleCommand(command) {
       this.selectedOption = command;
       this.affectedGroup =
@@ -88,6 +92,19 @@ export default {
 </script>
 
 <style scoped>
+
+.invisible-home-button {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
 
 .impact-page {
   margin-top: 2vh;
