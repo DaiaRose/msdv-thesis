@@ -31,7 +31,14 @@
   v-if="hoveredImage"
   class="hover-background"
   :style="{ backgroundImage: `url(${hoveredImage})` }"
-></div>
+>
+  <div class="hover-year">
+    {{ hoveredCardData.date }}
+  </div> 
+
+
+
+</div>
 
 <div class="scroll-container" @scroll="handleScroll">
   <!-- One flex column per date -->
@@ -56,6 +63,7 @@
         :progress="currentStep === globalIndex(date, idx) ? currentProgress : 0"
         @hover="onHover"
         @leave="onLeave"
+        @navigate="onNavigate"
       />
     </div>
   </div>
@@ -75,7 +83,7 @@ import TimelineCards from "../components/TimelineCards.vue";
 
 const MAX_SVG_WIDTH = 600;
 const TAG_ORDER = ["top", "mid", "low"];
-const LANE_SPACING = 140;
+const LANE_SPACING = 50;
 const STACK_GAP = 50;
 
 export default {
@@ -104,23 +112,36 @@ cardsByDate() {
   });
   return map;
 },
+hoveredCardData() {
+  return this.timelineCards.find(c => c.id === this.hoveredCard) || {};
 },
+},
+
 methods: {
 primaryTag(card) {
   // find the highest-priority tag the card belongs to
   return TAG_ORDER.find(t => card.tags.includes(t)) || card.tags[0];
 },
+onNavigate(link) {
+    if (link) window.open(link, '_blank');
+  },
 toggleTag(tag) {
   const i = this.selectedTags.indexOf(tag);
   if (i === -1) this.selectedTags.push(tag);
   else this.selectedTags.splice(i, 1);
 },
 onHover(id, image) {
-  this.hoveredCard = id;
-  this.hoveredImage = `images/timeline/${image}`;
+  if (this.hoveredCard === id) {
+    // If you click the same card again, reset
+    this.onLeave();
+  } else {
+    // Otherwise show it
+    this.hoveredCard  = id;
+    this.hoveredImage = `images/timeline/${image}`;
+  }
 },
 onLeave() {
-  this.hoveredCard = null;
+  this.hoveredCard  = null;
   this.hoveredImage = "";
 },
 cardMarginTop(card) {
@@ -169,6 +190,10 @@ window.removeEventListener('resize', this.onResize);
 };
 </script>
 
+
+
+
+
 <style scoped>
 .inactive-tag {
   opacity: 0.4;
@@ -188,8 +213,10 @@ window.removeEventListener('resize', this.onResize);
   margin-top: 1em;
   margin-bottom: 7rem;
   font-size: 1.2rem;
-  font-weight: 400;   
+  font-weight: 400;
+  transform: rotate(180deg);
 }
+
 
 /* Active state */
 .vertical-button.active {
@@ -209,7 +236,7 @@ window.removeEventListener('resize', this.onResize);
 .horizontal-timeline {
   display: flex;
   align-items: flex-start;
-  margin-top: 50px;
+  margin-top: 10vh;
   position: relative;
   z-index: auto;
 }
@@ -217,7 +244,7 @@ window.removeEventListener('resize', this.onResize);
 .label-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   margin-right: 20px;
   position: relative;
   z-index: 1;
@@ -281,6 +308,19 @@ window.removeEventListener('resize', this.onResize);
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
+}
+
+
+.hover-year {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 4vw;
+  color: var(--purple);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  pointer-events: none; /* so clicks still hit the image */
+  z-index: 1;            /* above the background but below cards */
 }
 
 </style>

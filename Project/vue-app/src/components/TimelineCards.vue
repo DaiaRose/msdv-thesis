@@ -4,30 +4,15 @@
       <h2 class="date">{{ data.date }}</h2>
       <p class="description">{{ data.description }}</p>
 
-      <!-- emit hover/leave when the image itself is moused over -->
-      <a
-        v-if="data.link"
-        :href="data.link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <!-- image clicked -->
         <img
           v-if="data.image"
           :src="imageUrl"
           :alt="data.altText"
           class="card-image clickable"
-          @mouseover="$emit('hover', data.id, data.image)"
-          @mouseleave="$emit('leave')"
+          @click.prevent="$emit('hover', data.id, data.image)"
+          @dblclick.prevent="$emit('navigate', data.link)"
         />
-      </a>
-      <img
-        v-else-if="data.image"
-        :src="imageUrl"
-        :alt="data.altText"
-        class="card-image"
-        @mouseover="$emit('hover', data.id, data.image)"
-        @mouseleave="$emit('leave')"
-      />
     </div>
   </el-card>
 </template>

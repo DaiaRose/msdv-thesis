@@ -6,19 +6,20 @@
       <div class="slider-wrapper">
         <div class="slider-container">
           <el-slider
-            v-model="coverage"
-            vertical
-            height="200px"
-            :min="0"
-            :max="100"
-            :show-tooltip="false"
-            @input="updateLabelPosition"
-            ref="slider"
-            :style="{
-              '--el-color-primary': 'var(--orange)',
-              '--el-slider-runway-bg-color': 'var(--lightOrange)'
-            }"
-          />
+              v-model="coverage"
+              vertical
+              :height="'360px'" 
+              :min="0"
+              :max="100"
+              :show-tooltip="false"
+              @input="updateLabelPosition"
+              ref="slider"
+              :style="{
+                '--el-color-primary': 'var(--orange)',
+                '--el-slider-runway-bg-color': 'var(--lightOrange)'
+              }"
+            />
+
           <div
             class="slider-label"
             :style="{ top: labelTop + 'px' }"
@@ -31,12 +32,13 @@
       <!-- Grids -->
       <div class="grids">
         <div v-for="group in processedGroups" :key="group.id" class="group-grid">
+          <!-- Move label above grid -->
+          <div class="grid-label">{{ group.label }}</div>
           <FaceGrid
             :filledCount="group.affectedCount"
             :headImagePaths="group.headImagePaths"
             :faceImagePaths="group.faceImagePaths"
           />
-          <div class="grid-label">{{ group.label }}</div>
         </div>
       </div>
     </div>
@@ -114,17 +116,20 @@ export default {
 
 <style scoped>
 .bullying-viz {
-  padding: 4rem;
-  overflow: visible; /* Allow slider label to overflow */
+  overflow: visible;
+  width: 100vw;
 }
 
 .content-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  overflow: visible; /* Allow overflow of slider label */
+  flex-direction: row;       /* ensure horizontal layout */
+  justify-content: center;   /* center entire group horizontally */
+  align-items: center;       /* vertically align slider + grids */
+  gap: 4vw;                  /* spacing between slider and grids */
+  width: 100%;
+  overflow: visible;
 }
+
 
 .slider-wrapper {
   position: relative;
@@ -135,13 +140,14 @@ export default {
 
 .slider-container {
   position: relative;
-  height: 200px;
-  overflow: visible; /* ← ADD THIS LINE */
+  height: 360px; /* Was 300px – makes slider taller */
+  overflow: visible;
 }
-/* Label that tracks thumb */
+
+
 .slider-label {
   position: absolute;
-  right: 120%; /* move to left of the thumb */
+  right: 120%;
   top: 0;
   font-size: 1rem;
   background: var(--lightOrange);
@@ -154,18 +160,27 @@ export default {
 .grids {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 6vw; /* was 4vw */
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
+
 
 .group-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: auto;
 }
 
 .grid-label {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-size: 2vw;
+  color: var(--dark);
   text-align: center;
+  font-family: "Red Hat Display", sans-serif;
 }
+
 </style>

@@ -114,19 +114,20 @@ export default {
 }
 
 .el-dropdown-link:hover {
-  background: var(--purple);
+  background: var(--orange);
 }
 .styled-box {
   display: inline-block;
   padding: 0 10px;
   border-radius: var(--border-radius);
-  background: var(--lilac);
+  background: var(--lightOrange);
   cursor: pointer;
   line-height: 1.3;
 }
 
 .number-box {
   margin-left: 5px;
+  background: var(--lilac);
 }
 </style>
 

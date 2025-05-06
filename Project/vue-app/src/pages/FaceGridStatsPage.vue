@@ -5,10 +5,15 @@
     <header class="page-header">
       <p class="currently-statement">
         In the past year LGBTQ+ young people experienced
-        <el-dropdown trigger="click" @command="handleDropdownCommand">
+        <el-dropdown 
+          trigger="click" 
+          @command="handleDropdownCommand"
+          :popper-append-to-body="true"
+        >
           <span class="el-dropdown-link styled-box">
             {{ currentScene.title }} <i class="el-icon-arrow-down"></i>
           </span>
+
           <template #dropdown>
             <el-dropdown-item
               v-for="(scene, index) in scenes"
@@ -72,36 +77,36 @@ export default {
           title: 'forced sexual contact',
           description: 'Based on 2023 survey of LGBTQ+ young people ages 13-18',
           faceGrids: [
-            { filledCount: 5, headManifestKey: 'cisboyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 9, headManifestKey: 'cisgirlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 8, headManifestKey: 'tgirlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 12, headManifestKey: 'tboyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 11, headManifestKey: 'enbyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 9, headManifestKey: 'questionPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 5, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 8, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 12, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 11, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
           ]
         },
         {
           title: 'symptoms of depression',
           description: 'Based on 2024 survey of LGBTQ+ young people ages 13-18',
           faceGrids: [
-            { filledCount: 9, headManifestKey: 'cisboyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 11, headManifestKey: 'cisgirlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 14, headManifestKey: 'tgirlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 15, headManifestKey: 'tboyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 14, headManifestKey: 'enbyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 15, headManifestKey: 'questionPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 11, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 14, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 15, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 14, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 15, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
           ]
         },
         {
           title: 'suicidal thoughts',
           description: 'Based on 2024 survey of LGBTQ+ young people ages 13-18',
           faceGrids: [
-            { filledCount: 6, headManifestKey: 'cisboyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 7, headManifestKey: 'cisgirlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 11, headManifestKey: 'tgirlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 12, headManifestKey: 'tboyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 10, headManifestKey: 'enbyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 10, headManifestKey: 'questionPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 6, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 7, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 11, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 12, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 10, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 10, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
           ]
         }
       ]
@@ -125,6 +130,10 @@ export default {
 methods: {
   handleDropdownCommand(index) {
     this.currentSceneIndex = index;
+    this.$nextTick(() => {
+    const focused = this.$el.querySelector('.el-dropdown-menu__item:focus');
+    if (focused) focused.blur();
+    });
   },
   fetchManifest() {
     fetch('data/manifestPeeps.json')
@@ -148,10 +157,14 @@ mounted() {
 
 
 <style scoped>
+
+.grid-page {
+  margin-top: 2vh;
+}
 /* Fixed grid container */
 .fixed-grid-container {
   position: fixed;
-  top: 100px; /* Leave room for your header */
+  top: 15vh; /* Leave room for your header */
   bottom: 80px;
   left: 0;
   right: 0;
@@ -199,20 +212,19 @@ mounted() {
 /* Force the dropdown trigger to behave like part of the paragraph */
 .el-dropdown-link.styled-box {
   display: inline-block;
-  padding: 0 10px;
+  padding: 4px 10px;         /* add some top/bottom padding so click is easy */
   border-radius: var(--border-radius);
   background: var(--lightOrange);
   color: var(--dark);
-  font-weight: 400;
-  vertical-align: baseline;
-  line-height: 1.2;
   cursor: pointer;
+  line-height: 1;
+  position: relative;        /* needed for z‑index to take effect */
+  z-index: 2;                /* sit above fixed/grid layers */
 }
-
-/* Hover effect */
 .el-dropdown-link.styled-box:hover {
   background: var(--orange);
 }
+
 
 .grid-and-label {
   display: flex;

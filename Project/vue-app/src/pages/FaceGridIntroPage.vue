@@ -43,11 +43,11 @@ export default {
       // Just the first scene’s config
       startScene: {
         faceGrids: [
-          { filledCount: 24, headManifestKey: 'tboyPeeps', faceManifestKey: 'facePeeps' },
-          { filledCount: 24,  headManifestKey: 'tboyPeeps',  faceManifestKey: 'facePeeps' },
-          { filledCount: 24,  headManifestKey: 'tboyPeeps', faceManifestKey: 'facePeeps' },
-          { filledCount: 24,  headManifestKey: 'tboyPeeps',   faceManifestKey: 'facePeeps' },
-          { filledCount: 12,  headManifestKey: 'tboyPeeps',   faceManifestKey: 'facePeeps' }
+          { filledCount: 24, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
+          { filledCount: 24,  headManifestKey: 'allPeeps',  faceManifestKey: 'facePeeps' },
+          { filledCount: 24,  headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
+          { filledCount: 24,  headManifestKey: 'allPeeps',   faceManifestKey: 'facePeeps' },
+          { filledCount: 12,  headManifestKey: 'allPeeps',   faceManifestKey: 'facePeeps' }
         ]
       }
     };
@@ -112,7 +112,7 @@ export default {
   margin: 20px auto;
   padding: 8px 5px;
   position: fixed;
-  bottom: 20px;
+  bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
 }

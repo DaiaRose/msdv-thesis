@@ -37,8 +37,8 @@
       <el-dialog
         v-model="dialogVisible"
         :title="dialogTitle"
-        width="50%"
-        top="20vh" 
+        width="60%"
+        top="30vh" 
         :close-on-click-modal="true"
         custom-class="law-quote-dialog"
         :show-close="false"
@@ -74,7 +74,7 @@ export default {
             {
               abbr: "LA",
               tooltip: "No sex education course offered in the public schools of the state shall utilize any sexually explicit materials depicting male or female homosexual activity.",
-              title: "Louisiana – Bill Name"
+              title: "Louisiana: HB484"
             }
           ]
         },
@@ -102,7 +102,7 @@ export default {
             {
               abbr: "FL",
               tooltip: "Prohibiting a school district from encouraging classroom discussion about sexual orientation or gender identity in primary grade levels or in a specified manner.",
-              title: "Florida – Bill Name"
+              title: "Florida - HB 1557 (K-3)"
             }
           ]
         },
@@ -114,8 +114,8 @@ export default {
               tooltip: "Before grade five (5), a public school teacher shall not provide classroom instruction on the following topics: 1) Sexually explicit materials; 2) Sexual reproduction; 3) Sexual intercourse; 4) Gender identity; 5) Sexual orientation.",
               title: "Arkansas – Bill Name"
             },
-            { abbr: "FL", tooltip: "Prohibiting classroom instruction on sexual orientation or gender identity from occurring in prekindergarten through grade 8.", title: "Florida – Bill Name" },
-            { abbr: "FL", tooltip: "Florida details", title: "Florida – Supplemental" },
+            { abbr: "FL", tooltip: "Prohibiting classroom instruction on sexual orientation or gender identity from occurring in prekindergarten through grade 8.", title: "Florida: HB 1069 (preK-8)" },
+            { abbr: "FL", tooltip: "Florida details", title: "Florida - Board of Education Rules 6A-10.081" },
             { abbr: "IN", tooltip: "Indiana details", title: "Indiana – Bill Name" },
             { abbr: "IA", tooltip: "Iowa details", title: "Iowa – Bill Name" },
             { abbr: "KY", tooltip: "Kentucky details", title: "Kentucky – Bill Name" },
@@ -123,12 +123,12 @@ export default {
           ]
         },
         2024: { showLabel: true, states: [{ abbr: "LA", tooltip: "Louisiana details", title: "Louisiana – Bill Name" }] },
-        2025: { showLabel: true, states: [{ abbr: "OH", tooltip: "Ohio details", title: "Ohio – Bill Name" }] }
+        2025: { showLabel: true, states: [{ abbr: "OH", tooltip: "No school district or third party acting on behalf of a district shall provide instruction that includes sexuality content to students in grades kindergarten through three. “Sexuality content“ means any oral or written instruction, presentation, image, or description of sexual concepts or gender ideology provided in a classroom setting.", title: "Ohio: HB 8" }] }
       },
       // Dialog state
       dialogVisible: true,
-      dialogTitle: "Click a state for quotes.",
-      dialogContent: "Notice how the language for recent laws differs by adding reference to pronouns, gender identity, and in 2025, gender ideology.",
+      dialogTitle: "Click a state on the timeline to view a quote from their legislature.",
+      dialogContent: "Notice how the language for recent “Don't Say Gay“ laws compares to older “No Promo Homo“ laws.",
     };
   },
   computed: {
@@ -156,40 +156,42 @@ export default {
   }
 };
 </script>
-
-<style>
+<!-- Scoped page & component styles -->
+<style scoped>
+/* Page header */
 .page-header {
   padding: 1.5rem 1rem;
 }
-</style>
 
-
-<style scoped>
-/* Layout */
+/* Overall layout */
 .censor-laws {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* Content area */
 .content {
   flex: 1;
   padding: 20px;
 }
 
-/* Next-page button */
+/* Next‑page button */
 .next-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 40px;
+  right: 30px;
   z-index: 10;
 }
 
-/* Timeline */
+/* Timeline wrapper */
 .timeline {
   margin-top: auto;
   padding: 60px 10px;
 }
+
+/* Evenly spaced ticks */
 .timeline-container {
   display: flex;
   justify-content: space-between;
@@ -204,6 +206,8 @@ export default {
 .tick.tight {
   flex: 0.5;
 }
+
+/* Tick mark */
 .rect {
   position: absolute;
   bottom: 20px;
@@ -213,6 +217,8 @@ export default {
   height: 20px;
   background-color: var(--purple);
 }
+
+/* Year label under tick */
 .year {
   position: absolute;
   bottom: -25px;
@@ -222,7 +228,7 @@ export default {
   white-space: nowrap;
 }
 
-/* State labels */
+/* State‑abbr stack above tick */
 .states-container {
   position: absolute;
   bottom: 3rem;
@@ -249,22 +255,33 @@ export default {
 }
 </style>
 
+<!-- Global overrides & keyframes -->
 <style>
-/* Dialog overrides (global) */
+/* Dialog styling */
 .law-quote-dialog {
   border-radius: var(--border-radius);
   background: var(--lilac);
 }
+
 .law-quote-dialog .el-dialog__header {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.law-quote-dialog .el-dialog__body {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  /* increase top padding (default is 15px 20px) */
+  padding: 30px 20px 0;  /* top 30px, right/left 20px, bottom 0 */
 }
 
-/* Keyframes */
+.law-quote-dialog .el-dialog__header .el-dialog__title{
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark);
+}
+.law-quote-dialog .el-dialog__body {
+  font-size: 2rem;
+  line-height: 1.5;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Intro keyframe  */
 @keyframes zoom-from-top-in {
   from {
     transform: translate(-50%, -100px) scale(0);
@@ -276,4 +293,3 @@ export default {
   }
 }
 </style>
-
