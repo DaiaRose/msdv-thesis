@@ -29,12 +29,12 @@
         <span class="styled-box number-box">{{ increaseAmount }}%</span> from
         <span class="styled-box number-box">{{ value2017 }}%</span> in 2017 to
         <span class="styled-box number-box">{{ value2021 }}%</span> in 2021.
-      <button 
+      </p>
+        <button 
       v-if="buttonShow"
       class="next-button"
       @click="goToNextPage"> What impact does inclusion have? 
       </button>
-    </p>
   </div>
 </template>
 
@@ -96,9 +96,16 @@ export default {
 /* uses currentlyCensor styles*/
 
 .next-button {
-  display: inline-block;
-  margin-top: .5rem; /* creates space after text */
-  margin-left: auto; /* push it to the right */
+  margin-top: .5rem;
+  margin-left: auto; 
+  line-height: 1;
+  white-space: nowrap;     
+  width: auto;                 
+  max-width: 100%;  
+
+  position: absolute;
+  bottom: 3vh;   
+  right: 3vw;
 }
 
 </style>

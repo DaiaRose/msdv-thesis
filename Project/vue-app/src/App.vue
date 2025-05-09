@@ -66,7 +66,7 @@ body {
 .next-button {
 width: 240px;
 padding: 0.75em;
-font-size: 1.5rem;
+font-size: 2rem;
 font-weight: 400;
 font-family: inherit;
 background: var(--lightOrange);
@@ -79,6 +79,22 @@ cursor: pointer;
 .next-button:hover {
 background: var(--orange);
 }
+
+
+.el-dropdown-menu__item {
+  font-size: 2rem !important;
+  color: var(--dark) !important;
+  padding: 0.5rem !important;
+  margin: 0.5rem !important;
+  cursor: pointer !important;
+  transition: background 0.3s ease !important;
+}
+
+.el-dropdown-menu__item:hover {
+  background-color: var(--lilac) !important;
+  color: var(--dark) !important;
+}
+
 
 /* scroll-down (only for CurrentlyCensor ↔ CensorLaws) */
 .scroll-down-enter-from { transform: translateY(100%); }
