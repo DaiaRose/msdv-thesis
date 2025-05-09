@@ -3,12 +3,14 @@
   <div class="impact-viz">
     <div class="content-wrapper">
       <!-- Slider -->
-      <div class="slider-wrapper">
-        <div class="slider-container">
-          <el-slider
+      <div class="group-grid">
+        <div class="grid-label side-label">Inclusive<br />Schooling</div>
+        <div class="slider-wrapper">
+          <div class="slider-container">
+            <el-slider
               v-model="coverage"
               vertical
-              :height="'360px'" 
+              :height="'360px'"
               :min="0"
               :max="100"
               :show-tooltip="false"
@@ -16,18 +18,18 @@
               ref="slider"
               :style="{
                 '--el-color-primary': 'var(--orange)',
-                '--el-slider-runway-bg-color': 'var(--lightOrange)'
+                '--el-slider-runway-bg-color': 'var(--lightOrange)',
               }"
             />
-
-          <div
-            class="slider-label"
-            :style="{ top: labelTop + 'px' }"
-          >
-            {{ coverage }}%
+            <div class="slider-label" :style="{ top: labelTop + 'px' }">
+              {{ coverage }}%
+            </div>
           </div>
         </div>
       </div>
+
+
+
 
       <!-- Grids -->
       <div class="grids">
@@ -39,6 +41,7 @@
             :headImagePaths="group.headImagePaths"
             :faceImagePaths="group.faceImagePaths"
           />
+          <div class="grid-label">{{ group.affectedPercent }}%</div>
         </div>
       </div>
     </div>
@@ -101,10 +104,12 @@ export default {
           );
         const probability = adjustedOdds / (1 + adjustedOdds);
         const affectedCount = Math.round(probability * 24);
+        const affectedPercent = (probability * 100).toFixed(1);
 
         return {
           ...group,
           affectedCount,
+          affectedPercent,
           headImagePaths: this.manifest[group.headManifestKey] || [],
           faceImagePaths: this.manifest[group.faceManifestKey] || []
         };
@@ -130,7 +135,6 @@ export default {
   overflow: visible;
 }
 
-
 .slider-wrapper {
   position: relative;
   display: flex;
@@ -146,10 +150,11 @@ export default {
 
 
 .slider-label {
+  font-family: "Red Hat Display", sans-serif;
   position: absolute;
   right: 120%;
   top: 0;
-  font-size: 1rem;
+  font-size: 2rem;
   background: var(--lightOrange);
   padding: 4px 8px;
   border-radius: 6px;
@@ -177,6 +182,7 @@ export default {
 
 .grid-label {
   margin-bottom: 1.5rem;
+  margin-top: 1rem;
   font-size: 2vw;
   color: var(--dark);
   text-align: center;

@@ -66,7 +66,7 @@ body {
 .next-button {
 width: 240px;
 padding: 0.75em;
-font-size: 1.2rem;
+font-size: 1.5rem;
 font-weight: 400;
 font-family: inherit;
 background: var(--lightOrange);

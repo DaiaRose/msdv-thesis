@@ -97,7 +97,7 @@ export default {
 
 .next-button {
   display: inline-block;
-  margin-top: 1rem; /* creates space after text */
+  margin-top: .5rem; /* creates space after text */
   margin-left: auto; /* push it to the right */
 }
 

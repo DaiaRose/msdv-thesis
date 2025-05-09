@@ -210,7 +210,7 @@ export default {
 /* Tick mark */
 .rect {
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
@@ -224,14 +224,14 @@ export default {
   bottom: -25px;
   left: 50%;
   transform: translateX(-50%) rotate(-90deg);
-  font-size: 20px;
+  font-size: 1.7rem;
   white-space: nowrap;
 }
 
 /* State‑abbr stack above tick */
 .states-container {
   position: absolute;
-  bottom: 3rem;
+  bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -240,9 +240,9 @@ export default {
   align-items: center;
 }
 .state-abbr {
-  padding: 0 8px;
-  font-size: 1.2rem;
-  line-height: 2rem;
+  padding: 0 12px;
+  font-size: 1.5rem;
+  line-height: 3rem;
   font-weight: 600;
   color: var(--dark);
   background-color: var(--lightOrange);

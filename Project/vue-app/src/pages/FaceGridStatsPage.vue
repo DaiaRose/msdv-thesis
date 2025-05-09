@@ -4,7 +4,7 @@
     <!-- Header -->
     <header class="page-header">
       <p class="currently-statement">
-        In the past year LGBTQ+ young people experienced
+        In {{ currentScene.year }}, LGBTQ+ young people {{ currentScene.headingVerb }}
         <el-dropdown 
           trigger="click" 
           @command="handleDropdownCommand"
@@ -24,7 +24,7 @@
             </el-dropdown-item>
           </template>
         </el-dropdown>
-        at the following rates
+        at the following rates:
       </p>
     </header>
 
@@ -32,12 +32,13 @@
     <div class="fixed-grid-container">
       <div class="face-grids-container">
         <div v-for="(grid, index) in processedFaceGrids" :key="index" class="grid-and-label">
+          <p class="grid-label">{{ currentShortLabels[index] }}</p>
           <FaceGrid
             :filledCount="grid.filledCount"
             :headImagePaths="grid.headImagePaths"
             :faceImagePaths="grid.faceImagePaths"
           />
-          <div class="grid-label">{{ shortLabels[index] }}</div>
+          <div class="grid-label">{{ grid.percent }}%</div>
         </div>
       </div>
     </div>
@@ -75,58 +76,94 @@ export default {
       scenes: [
         {
           title: 'forced sexual contact',
-          description: 'Based on 2023 survey of LGBTQ+ young people ages 13-18',
+          year: 2023,
+          headingVerb: 'reporting ever experiencing',
+          description: 'Based on 2023 survey of LGBTQ+ young people ages 13-24',
           faceGrids: [
-            { filledCount: 5, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 9, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 8, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 12, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 11, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 9, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 5, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 22 },
+            { filledCount: 9, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps', percent: 37},
+            { filledCount: 8, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps', percent: 33},
+            { filledCount: 12, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 49},
+            { filledCount: 11, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps', percent: 45},
+            { filledCount: 9, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps', percent: 37},
           ]
         },
         {
           title: 'symptoms of depression',
-          description: 'Based on 2024 survey of LGBTQ+ young people ages 13-18',
+          year: 2024,
+          headingVerb: 'experienced',
+          description: 'Based on 2024 survey of LGBTQ+ young people ages 13-24',
           faceGrids: [
-            { filledCount: 9, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 11, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 14, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 15, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 14, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 15, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 9, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 39},
+            { filledCount: 11, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps', percent: 46},
+            { filledCount: 14, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps', percent: 57},
+            { filledCount: 15, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 61},
+            { filledCount: 14, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps', percent: 57},
+            { filledCount: 15, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps', percent: 62},
           ]
         },
         {
           title: 'suicidal thoughts',
-          description: 'Based on 2024 survey of LGBTQ+ young people ages 13-18',
+          year: 2024,
+          headingVerb: 'experienced',
+          description: 'Based on 2024 survey of LGBTQ+ young people ages 13-24',
           faceGrids: [
-            { filledCount: 6, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 7, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 11, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 12, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 10, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
-            { filledCount: 10, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps' },
+            { filledCount: 6, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 27},
+            { filledCount: 7, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps', percent: 31},
+            { filledCount: 11, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps', percent: 47},
+            { filledCount: 12, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 52},
+            { filledCount: 10, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps', percent: 43},
+            { filledCount: 10, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps', percent: 42},
           ]
-        }
+        },
+        {
+          title: 'self harm',
+          year: 2023,
+          headingVerb: 'reported',
+          description: 'Based on 2023 survey of LGBTQ+ young people ages 13-24',
+          faceGrids: [
+            { filledCount: 7, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 28},
+            { filledCount: 11, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps', percent: 47},
+            { filledCount: 12, headManifestKey: 'girlPeeps', faceManifestKey: 'facePeeps', percent: 52},
+            { filledCount: 17, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 72},
+            { filledCount: 16, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps', percent: 68},
+            { filledCount: 12, headManifestKey: 'allPeeps', faceManifestKey: 'facePeeps', percent: 48},
+          ]
+        },
       ]
     };
   },
+  
   computed: {
-    currentScene() {
-      return this.scenes[this.currentSceneIndex] || {};
-    },
-    processedFaceGrids() {
-      if (this.manifest && this.currentScene && this.currentScene.faceGrids) {
-        return this.currentScene.faceGrids.map(grid => ({
-          ...grid,
-          headImagePaths: this.manifest[grid.headManifestKey] || [],
-          faceImagePaths: this.manifest[grid.faceManifestKey] || []
-        }));
-      }
-      return [];
-    }
+  currentScene() {
+    return this.scenes[this.currentSceneIndex] || {};
   },
+  processedFaceGrids() {
+    if (this.manifest && this.currentScene && this.currentScene.faceGrids) {
+      return this.currentScene.faceGrids.map(grid => ({
+        ...grid,
+        headImagePaths: this.manifest[grid.headManifestKey] || [],
+        faceImagePaths: this.manifest[grid.faceManifestKey] || []
+      }));
+    }
+    return [];
+  },
+  currentShortLabels() {
+    // Use alternate labels if current scene is the last one
+    if (this.currentScene.title === 'self harm') {
+      return [
+        "cis boys",
+        "cis girls",
+        "trans girls",
+        "trans boys",
+        "nonbinary AFAB",
+        "nonbinary AMAB"
+      ];
+    }
+    return this.shortLabels;
+  }
+},
+
 methods: {
   handleDropdownCommand(index) {
     this.currentSceneIndex = index;
@@ -191,6 +228,7 @@ mounted() {
 /* fixed text below grids */
 .fixed-text-container {
   position: fixed;
+  font-size: 2rem;
   bottom: 20px;
   left: 0;
   right: 0;
@@ -234,7 +272,7 @@ mounted() {
 
 .grid-label {
   margin-top: 0.5rem;
-  font-size: 1.5vw;  /* Adjust as needed */
+  font-size: 2rem;  /* Adjust as needed */
   color: var(--dark);
   text-align: center;
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="impact-page">
     <p class="currently-statement">
-      Increasing the percentage of schools with LGBTQ-Inclusive Sex Ed is associated with fewer reports of
+      Increasing the percentage of schools with LGBTQ-inclusive sex education is associated with fewer reports of
       <el-dropdown 
         ref="dropdown"
         trigger="click" 
@@ -26,7 +26,7 @@
     </p>
 
     <div class="fixed-grid-container">
-      <ImpactFaces :groups="currentGroups" />
+      <ImpactFaces ref="impactFacesRef" :groups="currentGroups" />
     </div>
     <button class="invisible-home-button" @click="goHome"></button>
   </div>
@@ -78,6 +78,13 @@ export default {
       this.selectedOption = command;
       this.affectedGroup =
         command === "bullying" ? "gay and lesbian youth." : "all youth.";
+        
+        // Reset slider to 35%
+    const sliderComponent = this.$refs.impactFacesRef;
+    if (sliderComponent) {
+      sliderComponent.coverage = 35;
+      sliderComponent.updateLabelPosition();
+      }
     },
     onVisibleChange(isVisible) {
       if (!isVisible) {
@@ -126,7 +133,7 @@ export default {
 
 .el-dropdown-link.styled-box {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 9px 12px;
   border-radius: var(--border-radius);
   background: var(--lightOrange);
   color: var(--dark);
