@@ -1,5 +1,11 @@
 <template>
-  <div class="grid-container">
+  <div
+  class="grid-container"
+  :style="{
+    width: scaledWidth,
+    maxWidth: scaledMaxWidth
+  }"
+  >
     <div
       v-for="(square, index) in 24"
       :key="index"
@@ -41,6 +47,18 @@ export default {
     faceImagePaths: {
       type: Array,
       required: true
+    },
+    sizeScale: {
+    type: Number,
+    default: 1 // normal size by default
+    }
+  },
+  computed: {
+    scaledWidth() {
+      return `calc(17vw * ${this.sizeScale})`;
+    },
+    scaledMaxWidth() {
+      return `${240 * this.sizeScale}px`;
     }
   },
   data() {

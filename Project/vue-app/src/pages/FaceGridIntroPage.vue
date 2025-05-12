@@ -19,6 +19,7 @@
           :filledCount="grid.filledCount"
           :headImagePaths="manifest[grid.headManifestKey]"
           :faceImagePaths="manifest[grid.faceManifestKey]"
+          :sizeScale="1.3" 
         />
       </div>
     </div>
@@ -101,11 +102,12 @@ export default {
   justify-content: center;
   align-items: center;
   gap: clamp(10px, 3vw, 40px); /* smart expanding gaps */
-  padding-top: 2vw;
-  padding-left: 1vw;
+  padding-top: 2vw; /*need so hair isn't cut off*/
+  padding-left: 0.5vw;
   overflow-x: auto;    /* scroll sideways if absolutely necessary (but should rarely happen) */
   max-width: 95vw;
   margin: 0 auto;
+  height: 100%; /* fill the container */
 }
 
 .next-button {

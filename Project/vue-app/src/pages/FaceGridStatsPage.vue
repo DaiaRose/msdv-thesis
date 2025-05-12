@@ -77,7 +77,7 @@ export default {
         {
           title: 'forced sexual contact',
           year: 2023,
-          headingVerb: 'reporting ever experiencing',
+          headingVerb: 'reported ever experiencing',
           description: 'Based on 2023 survey of LGBTQ+ young people ages 13-24',
           faceGrids: [
             { filledCount: 5, headManifestKey: 'boyPeeps', faceManifestKey: 'facePeeps', percent: 22 },
