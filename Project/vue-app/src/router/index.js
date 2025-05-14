@@ -8,6 +8,8 @@ import FaceGridIntroPage from '../pages/FaceGridIntroPage.vue'
 import FaceGridStatsPage from '../pages/FaceGridStatsPage.vue'  
 import impactPage from '../pages/impactPage.vue'  
 import CurrentlyInclude from '../pages/CurrentlyInclude.vue'
+// import WHY from '../pages/WHY.vue'
+// import IMPACT from '../pages/IMPACT.vue'
 
 
 const routes = [
@@ -27,13 +29,17 @@ const routes = [
     component: CurrentlyCensor,
     meta: { transition: 'scroll-down' }
   },
-
   {
     path: '/CensorLaws',
     name: 'CensorLaws',
     component: CensorLaws,
     meta: { transition: 'scroll-down' }
   },
+  // {
+  //   path: '/WHY',
+  //   name: 'WHY',
+  //   component: WHY
+  // },
   {
     path: '/FaceGridIntroPage',
     name: 'FaceGridIntroPage',
@@ -50,7 +56,11 @@ const routes = [
     name: 'CurrentlyInclude',
     component: CurrentlyInclude
   },
-
+  // {
+  //   path: '/IMPACT',
+  //   name: 'IMPACT',
+  //   component: IMPACT
+  // },
   {
     path: '/impactPage',
     name: 'impactPage',

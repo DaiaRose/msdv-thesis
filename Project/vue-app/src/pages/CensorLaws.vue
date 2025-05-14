@@ -69,7 +69,7 @@ export default {
             {
               abbr: "OK",
               tooltip: "1. engaging in homosexual activity, promiscuous sexual activity, intravenous drug use or contact with contaminated blood products is now known to be primarily responsible for contact with the AIDS virus; 2. avoiding the activities specified in paragraph 1 of this subsection is the only method of preventing the spread of the virus;",
-              title: "Oklahoma – Bill Name"
+              title: "Oklahoma: HB 1476"
             },
             {
               abbr: "LA",
@@ -82,13 +82,13 @@ export default {
           showLabel: true,
           states: [
             {
-              abbr: "MI",
+              abbr: "MS",
               tooltip: "(e) Teaches the current state law related to sexual conduct, including forcible rape, statutory rape, paternity establishment, child support and homosexual activity; and (f) Teaches that a mutually faithful, monogamous relationship in the context of marriage is the only appropriate setting for sexual intercourse.",
-              title: "Michigan – Bill Name"
+              title: "Mississippi: HB 1304"
             }
           ]
         },
-        1991: { showLabel: true, states: [{ abbr: "TX", tooltip: "unknown", title: "Texas – Bill Name" }] },
+        1991: { showLabel: true, states: [{ abbr: "TX", tooltip: "text is not searchable", title: "Texas: HB 949" }] },
         2000: { showLabel: true },
         2010: { showLabel: true },
         2022: {
@@ -97,7 +97,7 @@ export default {
             {
               abbr: "AL",
               tooltip: "An individual or group of individuals providing classroom instruction to students in kindergarten through the fifth grade at a public K-12 school shall not engage in classroom discussion or provide classroom instruction regarding sexual orientation or gender identity in a manner that is not age appropriate or developmentally appropriate for students in accordance with state standards.",
-              title: "Alabama – Bill Name"
+              title: "Alabama: HB 322"
             },
             {
               abbr: "FL",
@@ -109,21 +109,35 @@ export default {
         2023: {
           showLabel: true,
           states: [
-            {
-              abbr: "AR",
+            { abbr: "AR",
               tooltip: "Before grade five (5), a public school teacher shall not provide classroom instruction on the following topics: 1) Sexually explicit materials; 2) Sexual reproduction; 3) Sexual intercourse; 4) Gender identity; 5) Sexual orientation.",
-              title: "Arkansas – Bill Name"
+              title: "Arkansas: SB 294"
             },
-            { abbr: "FL", tooltip: "Prohibiting classroom instruction on sexual orientation or gender identity from occurring in prekindergarten through grade 8.", title: "Florida: HB 1069 (preK-8)" },
-            { abbr: "FL", tooltip: "Florida details", title: "Florida - Board of Education Rules 6A-10.081" },
-            { abbr: "IN", tooltip: "Indiana details", title: "Indiana – Bill Name" },
-            { abbr: "IA", tooltip: "Iowa details", title: "Iowa – Bill Name" },
-            { abbr: "KY", tooltip: "Kentucky details", title: "Kentucky – Bill Name" },
-            { abbr: "NC", tooltip: "North Carolina details", title: "North Carolina – Bill Name" }
+            { abbr: "FL", 
+            tooltip: "Prohibiting classroom instruction on sexual orientation or gender identity from occurring in prekindergarten through grade 8.", 
+            title: "Florida: HB 1069 (preK-8)" },
+            { abbr: "FL", tooltip: " Shall not intentionally provide classroom instruction to students in grades 4 through 12 on sexual orientation or gender identity unless such instruction is either expressly required by state academic standards as adopted in Rule 6A-1.09401, F.A.C., or is part of a reproductive health course or health lesson for which a student’s parent has the option to have his or her student not attend",
+             title: "Florida - Board of Education Rules 6A-10.081" },
+            { abbr: "IN", tooltip: "A school, an employee or staff member of a school, or a third party vendor used by a school to provide instruction may not provide any instruction to a student in prekindergarten through grade 3 on human sexuality.",
+             title: "Indiana: HB 1608" },
+            { abbr: "IA", tooltip: "A school district shall not provide any program, curriculum, test, survey, questionnaire, promotion, or instruction relating to gender identity or sexual orientation to students in kindergarten through grade six.",
+            title: "Iowa: SF 496" },
+            { abbr: "KY", tooltip: "Children in grade five (5) and below do not receive any instruction through curriculum or programs on human sexuality or sexually transmitted diseases; or 2. Any child, regardless of grade level, enrolled in the district does not receive any instruction or presentation that has a goal or purpose of students studying or exploring gender identity, gender expression, or sexual orientation; and (e) A policy to notify a parent in advance and obtain the parent's written consent before the parent's child in grade six (6) or above receives any instruction through curriculum or programs on human sexuality or sexually transmitted diseases authorized in this section.",
+             title: "Kentucky: SB 150" },
+            { abbr: "NC", tooltip: "Instruction on gender identity, sexual activity, or sexuality shall not be included in the curriculum provided in grades kindergarten through fourth grade, regardless of whether the information is provided by school personnel or third parties.",
+             title: "North Carolina: S 49" }
           ]
         },
-        2024: { showLabel: true, states: [{ abbr: "LA", tooltip: "Louisiana details", title: "Louisiana – Bill Name" }] },
-        2025: { showLabel: true, states: [{ abbr: "OH", tooltip: "No school district or third party acting on behalf of a district shall provide instruction that includes sexuality content to students in grades kindergarten through three. “Sexuality content“ means any oral or written instruction, presentation, image, or description of sexual concepts or gender ideology provided in a classroom setting.", title: "Ohio: HB 8" }] }
+        2024: { showLabel: true, states: [{ abbr: "LA", tooltip: "To enact R.S. 17:412, relative to public school teachers, personnel, and students; to provide relative to discussion of sexual orientation or gender identity with students; to prohibit teachers and others from discussing their sexual orientation or gender identity with students; and to provide for related matters.", title: "Louisiana: HB 122" }] },
+        2025: { 
+          showLabel: true, 
+          states: 
+          [{ abbr: "OH", 
+          tooltip: "No school district or third party acting on behalf of a district shall provide instruction that includes sexuality content to students in grades kindergarten through three. “Sexuality content“ means any oral or written instruction, presentation, image, or description of sexual concepts or gender ideology provided in a classroom setting.", 
+          title: "Ohio: HB 8" },
+          { abbr: "WV", 
+          tooltip: "requiring a public school employee to report a student's request for an accommodation that is intended to affirm the student's gender identity from a person employed by the public school to an administrator employed by the county board and assigned to the school", 
+          title: "West Virginia: SB 154" }] }
       },
       // Dialog state
       dialogVisible: true,
@@ -151,6 +165,7 @@ export default {
       this.dialogVisible = true;
     },
     goToNextPage() {
+      // this.$router.push({ name: 'WHY' });
       this.$router.push({ name: 'FaceGridIntroPage' });
     }
   }

@@ -79,6 +79,7 @@ export default {
       }
     },
     goToNextPage() {
+      // this.$router.push({ name: 'IMPACT' });
       this.$router.push({ name: 'impactPage' });
     }
   },
